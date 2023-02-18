@@ -1,0 +1,142 @@
+
+$verde: #AAC86B;
+$verdeOscuro: #48692C;
+$gris: #828282;
+$blanco: #F8F8FF;
+$negro: #000000;
+$azul_desv: rgba(59,82,150, 0.55);
+$azul: #428CFF;
+ion-content{
+    --background: rgb(123,131,204);
+    --background: linear-gradient(45deg, rgba(123,131,204,1) 0%, rgba(59,82,150,1) 45%, rgba(69,77,102,1) 100%);
+
+    .circulos{
+        width: 100vw;
+        position: relative;
+        top: 0;
+        right: 0;
+        z-index: -3;
+        .circle1{
+            top: 0px;
+            right: 0px;
+            position: absolute;
+            border-radius: 50%;
+            width: 100px;
+            height: 100px;
+            border: $azul_desv solid 3px;
+        }
+        .circle2{
+            top: -50px;
+            right: -50px;
+            position: absolute;
+            border-radius: 50%;
+            width: 200px;
+            height: 200px;
+            border: $azul_desv solid 3px;
+        }
+        .circle3{
+            top: -100px;
+            right: -100px;
+            position: absolute;
+            border-radius: 50%;
+            width: 300px;
+            height: 300px;
+            border: $azul_desv solid 3px;
+        }
+        .circle4{
+            top: -150px;
+            right: -150px;
+            position: absolute;
+            border-radius: 50%;
+            width: 400px;
+            height: 400px;
+            border: $azul_desv solid 3px;
+        }
+        .circle5{
+            top: -200px;
+            right: -200px;
+            position: absolute;
+            border-radius: 50%;
+            width: 500px;
+            height: 500px;
+            border: $azul_desv solid 3px;
+        }
+    }
+    
+    div{
+        border-radius: 15px;
+    }
+    .contenedorGeneral{
+        padding-inline: 2rem;
+        padding-top: 3rem;
+    
+        .presentacion{
+            filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+            margin-bottom: 1rem;
+            h1{
+                color: $blanco;
+                font-size: 1.1rem;
+                margin: 0 !important;
+            }
+            h2{
+                color: $negro;
+                font-size: 1.25rem;
+                margin: .5rem 0 0 0;
+            }
+        }
+        .datosZona{
+            background-color: $verde;
+            filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+            margin-bottom: 1rem;
+            padding: 0.5rem 0.6rem 0.5rem 0.6rem;
+            ion-icon{
+                font-size: 2rem;
+            }
+            p{
+                font-size: .85rem;
+                color: $verdeOscuro;
+                margin: 0 !important;
+            }
+            ion-col{
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                .datos{
+                    margin: 0.4rem 0 0 0;
+                    display: flex;
+                    flex-direction: row;
+                    justify-content: space-around;
+                    p{
+                        font-size: 1.5rem;
+                    }
+                }
+            }
+            .bateria{
+                ion-icon{
+                    transform: rotate(-90deg);
+                }
+            }
+        }
+    }
+    .funciones{
+        .funcData{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background-color: $azul;
+            border-radius: 15px;
+            font-size: 1rem;
+            width: 39.74vw;
+            height: 39.74vw;
+            margin-bottom: 1rem;
+            padding: 1rem;
+            p{
+                margin-bottom: .8rem;
+            }
+            ion-icon{
+                font-size: 43px;
+            }
+        }
+    }
+}
