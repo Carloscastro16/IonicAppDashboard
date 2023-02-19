@@ -13,6 +13,7 @@
       <ion-button type="submit" (click)="authService.SignOut()" expand="block">Logout</ion-button>
     </div>
     <div class="container datosZona" *ngIf="items | async as data">
+
       <ion-grid>
         <ion-row>
           <ion-col class="bateria">
@@ -60,40 +61,43 @@
       </div>
     </div>
     <div class="registros">
-      <h2>Fauna</h2>
+      <h2 class="mb-3">Fauna</h2>
       <div class="registro flex" *ngIf="iguanas | async as cant">
+        <div class="porcentaje">
+          <span></span>
+        </div>
         <p>{{cant[0]}}</p>
-        <div class="anotacion flex">
-          <div class="info">
+        <div class="anotacion flex items-center justify-between">
+          <div class="info flex-initial w-36">
             <h3>Iguanas</h3>
             <p>Ultimo registro:</p>
           </div>
           <div class="boton">
-            <ion-button>Ver mas..</ion-button>
+            <ion-button shape="round">Ver mas..</ion-button>
           </div>
         </div>
       </div>
       <div class="registro flex" *ngIf="pajaros | async as cant">
         <p>{{cant[0]}}</p>
-        <div class="anotacion flex">
-          <div class="info">
+        <div class="anotacion flex items-center justify-between">
+          <div class="info flex-initial w-36">
             <h3>Pajaros</h3>
             <p>Ultimo registro:</p>
           </div>
-          <div class="boton" shape="round">
-            <ion-button>Ver mas..</ion-button>
+          <div class="boton">
+            <ion-button shape="round">Ver mas..</ion-button>
           </div>
         </div>
       </div>
       <div class="registro flex " *ngIf="ardillas | async as cant">
         <p>{{cant[0]}}</p>
-        <div class="anotacion flex">
-          <div class="info">
+        <div class="anotacion flex items-center justify-between">
+          <div class="info flex-initial w-36">
             <h3>Ardillas</h3>
             <p>Ultimo registro:</p>
           </div>
           <div class="boton" >
-            <ion-button>Ver mas..</ion-button>
+            <ion-button shape="round">Ver mas..</ion-button>
           </div>
         </div>
       </div>
