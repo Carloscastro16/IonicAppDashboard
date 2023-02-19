@@ -1,0 +1,18 @@
+$verde: #AAC86B;
+$verdeOscuro: #48692C;
+$gris: #828282;
+$blanco: #F8F8FF;
+$negro: #000000;
+$azul_desv: rgba(59,82,150, 0.25);
+$azul: #428CFF;
+$rosa: #F28482;
+$rosita: #FF8484;
+ion-content{
+    --background: #08AEEA;
+    /* --background: linear-gradient(210deg, #08AEEA 0%, #2AF598 100%); */
+    --background: linear-gradient(225deg, #21D4FD 0%, #6535fc 100%);
+}
+body{
+    padding: 2rem 4rem;
+}
+
