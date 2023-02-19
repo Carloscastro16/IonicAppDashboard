@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { AuthenticationService } from "../services/auth.service";
 import { FirebaseDataService } from '../services/firebase-data.service';
 import { AngularFireDatabase } from '@angular/fire/compat/database';
+import { AngularFirestore, AngularFirestoreCollection } from '@angular/fire/compat/firestore';
 import { Sensores } from '../interfaces';
 import { Observable } from 'rxjs/Observable';
 
@@ -11,39 +12,34 @@ import { Observable } from 'rxjs/Observable';
   styleUrls: ['./admin.page.scss'],
 })
 export class AdminPage implements OnInit {
+  /* private itemsCollection: AngularFirestoreCollection<Sensores>;
+  items: Observable<Sensores[]>; */
+  registros = {
+    iguana: 0,
+    pajaros: 0,
+    ardillas: 0
+  };
 
-  hum = false;
-  sensores = [
-    {
-      bat: 0,
-      hum:0,
-      led: true,
-      temp: 0
-    },
-    {
-      led: true,
-      temp: 0,
-      hum:0,
-      bat: 0
-    }
-  ];
-  sensor = {
-    bat: 0,
-    hum:0,
-    led: true,
-    temp: 0
-  }
   items: Observable<any[]>;
+  iguanas: Observable<any[]>;
+  pajaros: Observable<any[]>;
+  ardillas: Observable<any[]>;
+
   constructor(
     public authService: AuthenticationService,
-    public firebaseService: FirebaseDataService,
-    public afdb: AngularFireDatabase
-    
+    public firebaseSerevice: FirebaseDataService,
+    public afdb: AngularFireDatabase,
+    private afs: AngularFirestore
   ) { 
     this.items = afdb.list('App/Sensores/').valueChanges();
+    /* this.itemsCollection = afs.collection<Sensores>('App/Sensores/');
+    this.items = this.itemsCollection.valueChanges(); */
+    this.iguanas = afdb.list('App/detecciones/iguanas/').valueChanges();
+    this.pajaros = afdb.list('App/detecciones/pajaros/').valueChanges();
+    this.ardillas = afdb.list('App/detecciones/ardillas/').valueChanges();
   }
   ngOnInit() {
-    console.log("Lista: "+this.items);
+    console.log(this.iguanas);
     /* const path = "App/Sensores/";
     this.firebaseService.getDoc<Sensores>(path).subscribe(res => {
       console.log("humedad: " + res?.hum);

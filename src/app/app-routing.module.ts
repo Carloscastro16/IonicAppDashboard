@@ -18,6 +18,22 @@ const routes: Routes = [
     path: 'admin',
     loadChildren: () => import('./admin/admin.module').then( m => m.AdminPageModule)
   },
+  {
+    path: 'camaras',
+    loadChildren: () => import('./camaras/camaras.module').then( m => m.CamarasPageModule)
+  },
+  {
+    path: 'puertas',
+    loadChildren: () => import('./puertas/puertas.module').then( m => m.PuertasPageModule)
+  },
+  {
+    path: 'clima',
+    loadChildren: () => import('./clima/clima.module').then( m => m.ClimaPageModule)
+  },
+  {
+    path: 'deteccion',
+    loadChildren: () => import('./deteccion/deteccion.module').then( m => m.DeteccionPageModule)
+  },
 
 ];
 @NgModule({

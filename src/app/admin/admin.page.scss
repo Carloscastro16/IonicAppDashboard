@@ -4,12 +4,18 @@ $verdeOscuro: #48692C;
 $gris: #828282;
 $blanco: #F8F8FF;
 $negro: #000000;
-$azul_desv: rgba(59,82,150, 0.55);
+$azul_desv: rgba(59,82,150, 0.25);
 $azul: #428CFF;
+$rosa: #F28482;
+$rosita: #FF8484;
 ion-content{
-    --background: rgb(123,131,204);
-    --background: linear-gradient(45deg, rgba(123,131,204,1) 0%, rgba(59,82,150,1) 45%, rgba(69,77,102,1) 100%);
-
+    --background: #08AEEA;
+    /* --background: linear-gradient(210deg, #08AEEA 0%, #2AF598 100%); */
+    --background: linear-gradient(225deg, #21D4FD 0%, #6535fc 100%);
+    /* --background:linear-gradient(45deg, rgba(61,88,166,1) 0%, rgba(8,174,234,1) 100%); */
+    /* --background: linear-gradient(45deg, rgba(170,200,107,1) 0%, rgba(61,88,166,1) 50%, rgba(8,174,234,1) 100%); */
+    /* --background: rgb(123,131,204);
+    --background: linear-gradient(45deg, rgba(123,131,204,1) 0%, rgba(59,82,150,1) 45%, rgba(69,77,102,1) 100%); */
     .circulos{
         width: 100vw;
         position: relative;
@@ -73,6 +79,7 @@ ion-content{
         .presentacion{
             filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
             margin-bottom: 1rem;
+            font-weight: bold;
             h1{
                 color: $blanco;
                 font-size: 1.1rem;
@@ -83,12 +90,16 @@ ion-content{
                 font-size: 1.25rem;
                 margin: .5rem 0 0 0;
             }
+            ion-button{
+                --background: #FF8484;
+            }
         }
         .datosZona{
             background-color: $verde;
-            filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+            box-shadow:  0px 31px 98px -11px rgba(0,0,0,0.39);
             margin-bottom: 1rem;
             padding: 0.5rem 0.6rem 0.5rem 0.6rem;
+            width: 100%;
             ion-icon{
                 font-size: 2rem;
             }
@@ -121,21 +132,44 @@ ion-content{
     }
     .funciones{
         .funcData{
+            box-shadow: 0px 0px 129px -20px rgba(0,0,0,0.59);
             display: flex;
             flex-direction: column;
             align-items: center;
-            background-color: $azul;
+            background-color: $rosita;
             border-radius: 15px;
             font-size: 1rem;
-            width: 39.74vw;
-            height: 39.74vw;
             margin-bottom: 1rem;
             padding: 1rem;
+            cursor: pointer;
             p{
                 margin-bottom: .8rem;
             }
             ion-icon{
                 font-size: 43px;
+            }
+        }
+    }
+    .registros{
+        filter: drop-shadow(0px 6px 17px -3px rgba(0, 0, 0, 0.45));
+        color: $blanco;
+        h2{
+            font-size: 1.2rem;
+            color: $negro;
+            font-weight: 600;
+        }
+        p{
+            margin: .5rem 1rem .5rem 1rem;
+        }
+        .anotacion{
+            h3{
+                font-size: 1rem !important;
+                color: $negro;
+            }
+            p{
+                font-size: .7rem !important;
+                color: $gris;
+                margin: 0;
             }
         }
     }

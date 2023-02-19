@@ -41,23 +41,63 @@
     </div>
     <div class="container funciones">
       <div class="columns-2">
-        <div class="funcData">
+        <div class="funcData" [routerLink]="['/camaras']">
           <p>Camaras</p>
           <ion-icon name="videocam-outline"></ion-icon>
         </div>
-        <div class="funcData">
+        <div class="funcData" [routerLink]="['/puertas']">
           <p>Puertas</p>
           <ion-icon name="key-outline"></ion-icon>
         </div>
-        <div class="funcData">
+        <div class="funcData" [routerLink]="['/clima']">
           <p>Clima</p>
           <ion-icon name="cloudy-night-outline"></ion-icon>
         </div>
-        <div class="funcData">
+        <div class="funcData" [routerLink]="['/deteccion']">
           <p>Protección</p>
           <ion-icon name="megaphone-outline"></ion-icon>
         </div>
       </div>
     </div>
+    <div class="registros">
+      <h2>Fauna</h2>
+      <div class="registro flex" *ngIf="iguanas | async as cant">
+        <p>{{cant[0]}}</p>
+        <div class="anotacion flex">
+          <div class="info">
+            <h3>Iguanas</h3>
+            <p>Ultimo registro:</p>
+          </div>
+          <div class="boton">
+            <ion-button>Ver mas..</ion-button>
+          </div>
+        </div>
+      </div>
+      <div class="registro flex" *ngIf="pajaros | async as cant">
+        <p>{{cant[0]}}</p>
+        <div class="anotacion flex">
+          <div class="info">
+            <h3>Pajaros</h3>
+            <p>Ultimo registro:</p>
+          </div>
+          <div class="boton" shape="round">
+            <ion-button>Ver mas..</ion-button>
+          </div>
+        </div>
+      </div>
+      <div class="registro flex " *ngIf="ardillas | async as cant">
+        <p>{{cant[0]}}</p>
+        <div class="anotacion flex">
+          <div class="info">
+            <h3>Ardillas</h3>
+            <p>Ultimo registro:</p>
+          </div>
+          <div class="boton" >
+            <ion-button>Ver mas..</ion-button>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
+  
 </ion-content>

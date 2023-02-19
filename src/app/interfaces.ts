@@ -4,3 +4,4 @@ export interface Sensores{
     hum: number,
     bat: number
 }
+
