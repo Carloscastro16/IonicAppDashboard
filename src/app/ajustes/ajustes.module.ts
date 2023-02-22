@@ -4,9 +4,9 @@ import { FormsModule } from '@angular/forms';
 
 import { IonicModule } from '@ionic/angular';
 
-import { DeteccionPageRoutingModule } from './deteccion-routing.module';
+import { AjustesPageRoutingModule } from './ajustes-routing.module';
 
-import { DeteccionPage } from './deteccion.page';
+import { AjustesPage } from './ajustes.page';
 import { ComponentsModule } from '../components/components.module';
 
 @NgModule({
@@ -15,8 +15,8 @@ import { ComponentsModule } from '../components/components.module';
     CommonModule,
     FormsModule,
     IonicModule,
-    DeteccionPageRoutingModule
+    AjustesPageRoutingModule
   ],
-  declarations: [DeteccionPage]
+  declarations: [AjustesPage]
 })
-export class DeteccionPageModule {}
+export class AjustesPageModule {}

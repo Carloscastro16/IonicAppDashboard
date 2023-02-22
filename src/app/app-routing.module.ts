@@ -34,6 +34,10 @@ const routes: Routes = [
     path: 'deteccion',
     loadChildren: () => import('./deteccion/deteccion.module').then( m => m.DeteccionPageModule)
   },
+  {
+    path: 'ajustes',
+    loadChildren: () => import('./ajustes/ajustes.module').then( m => m.AjustesPageModule)
+  },
 
 ];
 @NgModule({
