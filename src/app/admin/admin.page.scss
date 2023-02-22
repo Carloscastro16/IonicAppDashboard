@@ -14,6 +14,7 @@ ion-content{
     /* --background: linear-gradient(210deg, #08AEEA 0%, #2AF598 100%); */
     /* --background: linear-gradient(225deg, #21D4FD 0%, #6535fc 100%); */
     --background:  linear-gradient(225deg, #21D4FD 0%, #6535fc 100%);
+    padding-bottom: 4rem;
     .circulos{
         width: 100vw;
         position: relative;
@@ -89,8 +90,7 @@ ion-content{
         border-radius: 15px;
     }
     .contenedorGeneral{
-        padding-inline: 2rem;
-        padding-top: 3rem;
+        padding: 3rem 2rem 4rem 2rem;
         .presentacion{
             filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
             margin-bottom: 1rem;

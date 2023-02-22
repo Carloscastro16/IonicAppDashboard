@@ -7,9 +7,11 @@ import { IonicModule } from '@ionic/angular';
 import { CamarasPageRoutingModule } from './camaras-routing.module';
 
 import { CamarasPage } from './camaras.page';
+import { ComponentsModule } from '../components/components.module';
 
 @NgModule({
   imports: [
+    ComponentsModule,
     CommonModule,
     FormsModule,
     IonicModule,
