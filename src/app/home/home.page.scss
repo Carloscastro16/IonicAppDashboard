@@ -1,0 +1,57 @@
+ion-content{
+    --background: url("../../assets/img/fondoPlantas.png") no-repeat center center / cover;
+    background-attachment: fixed;
+    padding: 2rem 4rem;
+    backdrop-filter: blur(10px);
+    
+    hr{
+        height: 4px;
+        background-color: #d9d9d9;
+        width: 4.6rem;
+        border-radius: 15px;
+    }
+    .fondo{
+        background: rgba(255, 255, 255, .15);
+        padding: 100vh 4rem;
+        position: absolute;
+        bottom: 0;
+        left:0;
+        width: 100vw;
+        backdrop-filter: blur(5px);
+    }
+}
+ion-button{
+    &.registro{
+        --ion-color-base: #F58867 !important;
+    }
+    &.inicio{
+        --ion-color-bas: #F58867 !important;
+    }
+    width: 100%;
+}
+ion-grid, ion-row, ion-col{
+    height: 100%;
+}
+ion-col{
+    display: flex !important;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-end;
+    padding: 6rem 2rem;
+}
+ion-content{
+    display:flex;
+    justify-content:flex-end;
+    flex-direction: column;
+}
+.or{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 1rem 0 1rem 0;
+    color: #d9d9d9;
+    .already{
+        font-weight: 600;
+        margin-inline: 1rem;
+    }
+}

@@ -1,0 +1,27 @@
+ion-content{
+    --background: url("../../assets/img/fondoPlantas.png") no-repeat center center / cover;
+    padding: 2rem 4rem;
+    position: relative;
+    ion-item{
+        --background: transparent;
+    }
+
+    form{
+        background: rgba(255, 255, 255, .15);
+        border-radius: 20px;
+        padding: 3rem 4rem;
+        position: absolute;
+        bottom: 0;
+        left:0;
+        width: 100vw;
+        backdrop-filter: blur(10px);
+    }
+    ion-item{
+        margin-bottom: .5rem;
+        color: #d9d9d9;
+    }
+    ion-input{
+        color: #d9d9d9;
+    }
+    
+}

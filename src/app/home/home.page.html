@@ -1,0 +1,17 @@
+
+<ion-content class="auth-form">
+  <span class="fondo"></span>
+  <ion-grid class= "ion-justify-content-end ion-align-items-start">
+    <ion-row class= "ion-justify-content-center ion-align-items-start">
+      <ion-col>
+        <ion-button class="registro" [routerLink]="['/registration']" expand="block" color="primary" shape="round">Register</ion-button>
+        <div class="or">
+          <hr class="linea1">
+          <span class="already">Already a user?</span>
+          <hr class="linea2">
+        </div>
+        <ion-button class="inicio" [routerLink]="['/login']" expand="block" color="danger" shape="round">Sign In</ion-button>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>
