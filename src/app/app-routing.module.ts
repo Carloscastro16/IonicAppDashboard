@@ -14,7 +14,8 @@ const routes: Routes = [
   {
     path: 'forgor-password',
     loadChildren: () => import('./forgor-password/forgor-password.module').then( m => m.ForgorPasswordPageModule)
-  },  {
+  },
+  {
     path: 'admin',
     loadChildren: () => import('./admin/admin.module').then( m => m.AdminPageModule)
   },
