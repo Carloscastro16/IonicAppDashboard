@@ -7,9 +7,11 @@ import { IonicModule } from '@ionic/angular';
 import { ClimaPageRoutingModule } from './clima-routing.module';
 
 import { ClimaPage } from './clima.page';
+import { ComponentsModule } from '../components/components.module';
 
 @NgModule({
   imports: [
+    ComponentsModule,
     CommonModule,
     FormsModule,
     IonicModule,

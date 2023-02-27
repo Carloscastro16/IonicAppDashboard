@@ -5,62 +5,75 @@
     <span class="circle3"></span>
     <span class="circle4"></span>
     <span class="circle5"></span>
+    <span class="circle6"></span>
+    <span class="circle7"></span>
   </div>
   <div class="contenedorGeneral">
     <div class="presentacion">
       <h1>Bienvenido</h1>
-      <h2>Buenos días, Carlos!</h2>
+      <h2 class="mt-1 mb-4">Buenos días, Carlos!</h2>
       <ion-button type="submit" (click)="authService.SignOut()" expand="block">Logout</ion-button>
     </div>
-    <div class="container datosZona" *ngIf="items | async as data">
-
-      <ion-grid>
-        <ion-row>
-          <ion-col class="bateria">
-            <p>Bateria</p>
-            <div class="datos">
-              <ion-icon name="battery-half-outline"></ion-icon>
-              <p>{{data[0]}}%</p>
-            </div>
-          </ion-col>
-          <ion-col>
-            <p>Temperatura</p>
-            <div class="datos">
-              <ion-icon name="thermometer-outline"></ion-icon>
-              <p>{{data[3]}}°</p>
-            </div>
-          </ion-col>
-          <ion-col>
-            <p>Humedad</p>
-            <div class="datos">
-              <ion-icon name="water-outline"></ion-icon>
-              <p>{{data[1]}}%</p>
-            </div>
-          </ion-col>
-        </ion-row>
-      </ion-grid>
+    <div class="backdrop-blur-xs">
+      <div class="container datosZona" *ngIf="items | async as data">
+        <ion-grid>
+          <ion-row>
+            <ion-col class="bateria">
+              <p>Bateria</p>
+              <div class="datos">
+                <ion-icon name="battery-half-outline"></ion-icon>
+                <p>{{data[0]}}%</p>
+              </div>
+            </ion-col>
+            <ion-col>
+              <p>Temperatura</p>
+              <div class="datos">
+                <ion-icon name="thermometer-outline"></ion-icon>
+                <p>{{data[3]}}°</p>
+              </div>
+            </ion-col>
+            <ion-col>
+              <p>Humedad</p>
+              <div class="datos">
+                <ion-icon name="water-outline"></ion-icon>
+                <p>{{data[1]}}%</p>
+              </div>
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+      </div>
     </div>
+    
     <div class="container funciones">
       <div class="columns-2">
-        <div class="funcData" [routerLink]="['/camaras']">
-          <p>Camaras</p>
-          <ion-icon name="videocam-outline"></ion-icon>
+        <div class="camara backdrop-blur-xs bg-white/15">
+          <div class="funcData" [routerLink]="['/camaras']">
+            <p>Camaras</p>
+            <ion-icon name="videocam-outline"></ion-icon>
+          </div>
         </div>
-        <div class="funcData" [routerLink]="['/puertas']">
-          <p>Puertas</p>
-          <ion-icon name="key-outline"></ion-icon>
+        <div class="backdrop-blur-xs bg-white/15">
+          <div class="funcData" [routerLink]="['/puertas']">
+            <p>Puertas</p>
+            <ion-icon name="key-outline"></ion-icon>
+          </div>
         </div>
-        <div class="funcData" [routerLink]="['/clima']">
-          <p>Clima</p>
-          <ion-icon name="cloudy-night-outline"></ion-icon>
+        <div class="backdrop-blur-xs bg-white/15">
+          <div class="funcData" [routerLink]="['/clima']">
+            <p>Clima</p>
+            <ion-icon name="cloudy-night-outline"></ion-icon>
+          </div>
         </div>
-        <div class="funcData" [routerLink]="['/deteccion']">
-          <p>Protección</p>
-          <ion-icon name="megaphone-outline"></ion-icon>
+        <div class="backdrop-blur-xs bg-white/15">
+          <div class="funcData" [routerLink]="['/deteccion']">
+            <p>Protección</p>
+            <ion-icon name="megaphone-outline"></ion-icon>
+          </div>
         </div>
       </div>
     </div>
-    <div class="registros">
+
+    <div class="registros backdrop-blur-xs bg-white/15">
       <h2 class="mb-3">Fauna</h2>
       <div class="registro flex" *ngIf="iguanas | async as cant">
         <div class="porcentaje">
@@ -68,40 +81,40 @@
         </div>
         <p>{{cant[0]}}</p>
         <div class="anotacion flex items-center justify-between">
-          <div class="info flex-initial w-36">
+          <div class="info flex-initial w-48">
             <h3>Iguanas</h3>
             <p>Ultimo registro:</p>
           </div>
           <div class="boton">
-            <ion-button shape="round">Ver mas..</ion-button>
+            <ion-button shape="round">Ver</ion-button>
           </div>
         </div>
       </div>
       <div class="registro flex" *ngIf="pajaros | async as cant">
         <p>{{cant[0]}}</p>
         <div class="anotacion flex items-center justify-between">
-          <div class="info flex-initial w-36">
+          <div class="info flex-initial w-48">
             <h3>Pajaros</h3>
             <p>Ultimo registro:</p>
           </div>
           <div class="boton">
-            <ion-button shape="round">Ver mas..</ion-button>
+            <ion-button shape="round">Ver</ion-button>
           </div>
         </div>
       </div>
-      <div class="registro flex " *ngIf="ardillas | async as cant">
+      <div class="registro flex" *ngIf="ardillas | async as cant">
         <p>{{cant[0]}}</p>
         <div class="anotacion flex items-center justify-between">
-          <div class="info flex-initial w-36">
+          <div class="info flex-initial w-48">
             <h3>Ardillas</h3>
             <p>Ultimo registro:</p>
           </div>
           <div class="boton" >
-            <ion-button shape="round">Ver mas..</ion-button>
+            <ion-button shape="round">Ver</ion-button>
           </div>
         </div>
       </div>
     </div>
   </div>
-  
+  <app-navbar></app-navbar>
 </ion-content>

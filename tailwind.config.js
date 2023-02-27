@@ -2,7 +2,11 @@
 module.exports = {
   content: ['./src/**/*.{html,ts}'],
   theme: {
-    extend: {},
+    extend: {
+      backdropBlur: {
+        xs: '2px',
+      }
+    },
   },
   plugins: [require('@tailwindcss/aspect-ratio')
 ,require('@tailwindcss/forms')

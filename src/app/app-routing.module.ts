@@ -14,7 +14,8 @@ const routes: Routes = [
   {
     path: 'forgor-password',
     loadChildren: () => import('./forgor-password/forgor-password.module').then( m => m.ForgorPasswordPageModule)
-  },  {
+  },
+  {
     path: 'admin',
     loadChildren: () => import('./admin/admin.module').then( m => m.AdminPageModule)
   },
@@ -33,6 +34,10 @@ const routes: Routes = [
   {
     path: 'deteccion',
     loadChildren: () => import('./deteccion/deteccion.module').then( m => m.DeteccionPageModule)
+  },
+  {
+    path: 'ajustes',
+    loadChildren: () => import('./ajustes/ajustes.module').then( m => m.AjustesPageModule)
   },
 
 ];
