@@ -7,6 +7,10 @@ import {
   AngularFirestore,
   AngularFirestoreDocument,
 } from '@angular/fire/compat/firestore';
+
+import { getDatabase, ref, set } from "firebase/database";
+
+
 @Injectable({
   providedIn: 'root',
 })
@@ -27,6 +31,12 @@ export class AuthenticationService {
         localStorage.setItem('user', "");
         JSON.parse(localStorage.getItem('user') || "[]");
       }
+    });
+  }
+  writeData(datos: any, ruta: any) {
+    const db = getDatabase();
+    set(ref(db, 'users/' + ruta), {
+      Aviso: datos
     });
   }
   // Login in with email/password
