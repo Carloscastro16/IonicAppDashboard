@@ -38,7 +38,11 @@ const routes: Routes = [
   {
     path: 'ajustes',
     loadChildren: () => import('./ajustes/ajustes.module').then( m => m.AjustesPageModule)
+  },  {
+    path: 'graficas',
+    loadChildren: () => import('./graficas/graficas.module').then( m => m.GraficasPageModule)
   },
+
 
 ];
 @NgModule({

@@ -9,11 +9,13 @@ $azul: #428CFF;
 $azulMedio: #006daa;
 $rosa: #F28482;
 $rosita: #FF8484;
+$verde: #0e310d;
 ion-content{
     --background: #08AEEA;
     /* --background: linear-gradient(210deg, #08AEEA 0%, #2AF598 100%); */
     /* --background: linear-gradient(225deg, #21D4FD 0%, #6535fc 100%); */
-    --background:  linear-gradient(225deg, #21D4FD 0%, #6535fc 100%);
+    
+    --background:  linear-gradient(38deg, rgba(0,176,155,1) 0%, rgba(150,201,61,1) 82%);
     padding-bottom: 4rem;
     .circulos{
         width: 100vw;
@@ -92,7 +94,7 @@ ion-content{
     .contenedorGeneral{
         padding: 3rem 2rem 4rem 2rem;
         .presentacion{
-            filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+            filter: drop-shadow(4px 7px 17px 1px rgb(0 0 0 / 23%));
             margin-bottom: 1rem;
             font-weight: bold;
             h1{
@@ -114,10 +116,13 @@ ion-content{
         .datosZona{
             position: relative;
             z-index: 1;
-            box-shadow:  4px 8px 39px -1px rgb(0 0 0 / 75%);
+            box-shadow:  4px 7px 17px 1px rgb(0 0 0 / 23%);
             margin-bottom: 1rem;
             padding: 0.5rem 0.6rem 0.5rem 0.6rem;
             width: 100%;
+            ion-icon{
+                color: $blanco;
+            }
             ion-grid{
                 position: relative;
                 z-index: 3;
@@ -126,7 +131,7 @@ ion-content{
                 }
                 p{
                     font-size: .85rem;
-                    color: $blanco;
+                    color: $verde;
                     margin: 0 !important;
                 }
                 ion-col{

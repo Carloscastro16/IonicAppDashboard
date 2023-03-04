@@ -23,7 +23,7 @@ export class CamarasPage implements OnInit {
     public afdb: AngularFireDatabase,
     private afs: AngularFirestore
   ){
-    this.items = afdb.list('App/Sensores/').valueChanges();
+    this.items = afdb.list('App/Sensores/Generales').valueChanges();
     /* this.itemsCollection = afs.collection<Sensores>('App/Sensores/');
     this.items = this.itemsCollection.valueChanges(); */
     this.iguanas = afdb.list('App/detecciones/iguanas/').valueChanges();

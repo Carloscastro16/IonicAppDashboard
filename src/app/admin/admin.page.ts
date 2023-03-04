@@ -5,6 +5,7 @@ import { AngularFireDatabase } from '@angular/fire/compat/database';
 import { AngularFirestore, AngularFirestoreCollection } from '@angular/fire/compat/firestore';
 import { Sensores } from '../interfaces';
 import { Observable } from 'rxjs/Observable';
+import { getDatabase } from "firebase/database";
 
 @Component({
   selector: 'app-admin',
@@ -19,7 +20,7 @@ export class AdminPage implements OnInit {
     pajaros: 0,
     ardillas: 0
   };
-
+  
   items: Observable<any[]>;
   iguanas: Observable<any[]>;
   pajaros: Observable<any[]>;
@@ -28,18 +29,20 @@ export class AdminPage implements OnInit {
   constructor(
     public authService: AuthenticationService,
     public firebaseSerevice: FirebaseDataService,
-    public afdb: AngularFireDatabase,
-    private afs: AngularFirestore
+    public afdb: AngularFireDatabase
   ) { 
-    this.items = afdb.list('App/Sensores/').valueChanges();
+    this.items = afdb.list('App/Sensores/Generales').valueChanges();
     /* this.itemsCollection = afs.collection<Sensores>('App/Sensores/');
     this.items = this.itemsCollection.valueChanges(); */
     this.iguanas = afdb.list('App/detecciones/iguanas/').valueChanges();
     this.pajaros = afdb.list('App/detecciones/pajaros/').valueChanges();
     this.ardillas = afdb.list('App/detecciones/ardillas/').valueChanges();
   }
+  databaseRefBat = this.afdb.database.ref('App/Sensores/bat');
+  
   ngOnInit() {
     console.log(this.iguanas);
+    
     /* const path = "App/Sensores/";
     this.firebaseService.getDoc<Sensores>(path).subscribe(res => {
       console.log("humedad: " + res?.hum);
@@ -56,7 +59,7 @@ export class AdminPage implements OnInit {
       }
     }) */
   }
-
+  
   /* guardarDatos(){
     const path = 'Sensores';
     const newled: led = {

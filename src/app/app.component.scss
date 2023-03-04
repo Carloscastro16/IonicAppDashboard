@@ -7,6 +7,9 @@ $azul_desv: rgba(59,82,150, 0.25);
 $azul: #428CFF;
 $rosa: #F28482;
 $rosita: #FF8484;
+::-webkit-scrollbar {
+    display: none;
+}
 ion-content{
     --background: #08AEEA;
     /* --background: linear-gradient(210deg, #08AEEA 0%, #2AF598 100%); */

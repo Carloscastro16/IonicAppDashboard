@@ -1,9 +1,73 @@
-<ion-header>
-  <ion-toolbar>
-    <ion-title>deteccion</ion-title>
-  </ion-toolbar>
-</ion-header>
-
 <ion-content>
+  <div class="circulos">
+    <span class="circle1"></span>
+    <span class="circle2"></span>
+    <span class="circle3"></span>
+    <span class="circle4"></span>
+    <span class="circle5"></span>
+    <span class="circle6"></span>
+    <span class="circle7"></span>
+  </div>
+  <div class="contenedorGeneral">
+    <div class="presentacion">
+      <h1>Bienvenido</h1>
+      <h2 class="mt-1 mb-4">Buenos días, Carlos!</h2>
+      <ion-button type="submit" (click)="authService.SignOut()" expand="block">Logout</ion-button>
+    </div>
+    <div class="backdrop-blur-xs">
+      <div class="container datosZona" *ngIf="items | async as data">
+        <ion-grid>
+          <ion-row>
+            <ion-col class="bateria">
+              <p>Bateria</p>
+              <div class="datos">
+                <ion-icon name="battery-half-outline"></ion-icon>
+                <p>{{data[0]}}%</p>
+              </div>
+            </ion-col>
+            <ion-col>
+              <p>Temperatura</p>
+              <div class="datos">
+                <ion-icon name="thermometer-outline"></ion-icon>
+                <p>{{data[2]}}°</p>
+              </div>
+            </ion-col>
+            <ion-col>
+              <p>Humedad</p>
+              <div class="datos">
+                <ion-icon name="water-outline"></ion-icon>
+                <p>{{data[1]}}%</p>
+              </div>
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+      </div>
+    </div>
+    <div class="deteccion backdrop-blur-xs bg-white/15 p-4 flex flex-col md:flex-row justify-evenly">
+      <div class="zonaSur w-full">
+        <h2 class="pb-3">Registros Sur</h2>
+        <div class="regist flex w-full mb-2" *ngFor="let reg of registrosS | async as data">
+          <ion-icon name="bug-outline" class="w-4/12"></ion-icon>
+          <h3 class="w-full">{{ reg }}</h3>
+        </div>
+      </div>
+      <div class="zonaNorte w-full">
+        <h2 class="pb-3">Registros Norte</h2>
+        <div class="regist flex w-full mb-2" *ngFor="let reg of registrosN | async as data">
+          <ion-icon name="bug-outline" class="w-4/12"></ion-icon>
+          <h3 class="w-full">{{ reg }}</h3>
+        </div>
+      </div>
+    </div>
+    <div class="deteccion backdrop-blur-xs bg-white/15 p-4 flex flex-col md:flex-row justify-evenly">
+      <div class="zonaSur w-full">
+        <h2 class="pb-3">Graficas</h2>
+        <div class="regist flex w-full mb-2" *ngFor="let reg of registrosS | async as data">
+          <ion-icon name="bug-outline" class="w-4/12"></ion-icon>
+          <h3 class="w-full">{{ reg }}</h3>
+        </div>
+      </div>
+    </div>
+  </div>
   <app-navbar></app-navbar>
 </ion-content>

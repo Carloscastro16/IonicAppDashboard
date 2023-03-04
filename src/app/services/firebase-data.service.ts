@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { AngularFirestore, AngularFirestoreDocument, AngularFirestoreCollection } from '@angular/fire/compat/firestore';
 import { AngularFireDatabase } from '@angular/fire/compat/database';
-
+import { getDatabase } from "firebase/database";
 @Injectable({
   providedIn: 'root'
 })
