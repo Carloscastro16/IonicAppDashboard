@@ -4,6 +4,7 @@ import { AuthenticationService } from "../services/auth.service";
 import { FirebaseDataService } from '../services/firebase-data.service';
 import { AngularFireDatabase } from '@angular/fire/compat/database';
 import { AngularFirestore, AngularFirestoreCollection } from '@angular/fire/compat/firestore';
+import { Chart } from 'chart.js';
 
 @Component({
   selector: 'app-deteccion',

@@ -23,10 +23,10 @@ export class PuertasPage implements OnInit {
   ) { 
     this.items = afdb.list('App/Sensores/Generales').valueChanges();
   }
-  dbLed = this.afdb.database.ref('App/Sensores/led');
-  dbBuzz = this.afdb.database.ref('App/Sensores/buzz');
-  dbDoor = this.afdb.database.ref('App/Sensores/door');
-  dbCam = this.afdb.database.ref('App/Sensores/cam');
+  dbLed = this.afdb.database.ref('App/ZonaNorte/Actuadores/led1');
+  dbBuzz = this.afdb.database.ref('App/ZonaNorte/Actuadores/buzz');
+  dbDoor = this.afdb.database.ref('App/ZonaNorte/Leds/led1');
+  dbCam = this.afdb.database.ref('App/ZonaNorte/Leds/led1');
 
   ngOnInit() {
   }
@@ -37,14 +37,14 @@ export class PuertasPage implements OnInit {
   }
   sonidoOn(){
     this.valorBuzz = !this.valorBuzz;
-    this.dbLed.set(this.valorBuzz);
+    this.dbBuzz.set(this.valorBuzz);
   }
   doorOn(){
     this.valorDoor = !this.valorDoor;
-    this.dbLed.set(this.valorDoor);
+    this.dbDoor.set(this.valorDoor);
   }
   camOn(){
     this.valorCam = !this.valorCam;
-    this.dbLed.set(this.valorCam);
+    this.dbDoor.set(this.valorCam);
   }
 }
