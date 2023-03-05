@@ -1,11 +1,16 @@
 .navbar{
-    position:fixed;
+    position: fixed;
     bottom: 0;
+    left: 0;
     width: 100vw;
     height: 4rem;
-    background-color: rgb(74, 37, 196, .45);
-    padding-inline: 1rem;
-    border-radius: 15px 15px 0 0;
+    border-radius: 10px 10px 0 0;
+    .cont{
+        padding-top: 2.4rem;
+        padding-bottom: 2.4rem;
+        background-color: rgb(0, 152, 134);
+        padding-inline: 1rem;
+    }
     .info{
         font-size: 1.5rem;
         &:hover{
