@@ -1,20 +1,24 @@
 <ion-content>
-  <div class="circulos">
-    <span class="circle1"></span>
-    <span class="circle2"></span>
-    <span class="circle3"></span>
-    <span class="circle4"></span>
-    <span class="circle5"></span>
-    <span class="circle6"></span>
-    <span class="circle7"></span>
-  </div>
+  <!-- <div class="fondo">
+    <div class="circ1"></div>
+    <div class="circ2"></div>
+  </div> -->
   <div class="contenedorGeneral">
+    <div class="circulos">
+      <span class="circle1"></span>
+      <span class="circle2"></span>
+      <span class="circle3"></span>
+      <span class="circle4"></span>
+      <span class="circle5"></span>
+      <span class="circle6"></span>
+      <span class="circle7"></span>
+    </div>
     <div class="presentacion">
       <h1>Bienvenido</h1>
       <h2 class="mt-1 mb-4">Buenos días, Carlos!</h2>
       <ion-button type="submit" (click)="authService.SignOut()" expand="block">Logout</ion-button>
     </div>
-    <div class="backdrop-blur-xs">
+    <div class="backdrop-blur-sm">
       <div class="container datosZona" *ngIf="items | async as data">
         <ion-grid>
           <ion-row>
@@ -46,25 +50,25 @@
     
     <div class="container funciones">
       <div class="columns-2">
-        <div class="camara backdrop-blur-xs bg-white/15">
+        <div class="camara backdrop-blur-sm bg-white/15">
           <div class="funcData" [routerLink]="['/camaras']">
             <p>Camaras</p>
             <ion-icon name="videocam-outline"></ion-icon>
           </div>
         </div>
-        <div class="backdrop-blur-xs bg-white/15">
+        <div class="backdrop-blur-sm bg-white/15">
           <div class="funcData" [routerLink]="['/puertas']">
             <p>Controles</p>
             <ion-icon name="key-outline"></ion-icon>
           </div>
         </div>
-        <div class="backdrop-blur-xs bg-white/15">
+        <div class="backdrop-blur-sm bg-white/15">
           <div class="funcData" [routerLink]="['/clima']">
             <p>Clima</p>
             <ion-icon name="cloudy-night-outline"></ion-icon>
           </div>
         </div>
-        <div class="backdrop-blur-xs bg-white/15">
+        <div class="backdrop-blur-sm bg-white/15">
           <div class="funcData" [routerLink]="['/deteccion']">
             <p>Protección</p>
             <ion-icon name="megaphone-outline"></ion-icon>
