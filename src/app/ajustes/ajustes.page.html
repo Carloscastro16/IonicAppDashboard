@@ -1,9 +1,45 @@
-<ion-header>
-  <ion-toolbar>
-    <ion-title>ajustes</ion-title>
-  </ion-toolbar>
-</ion-header>
-
 <ion-content>
+  <div class="circulos">
+    <span class="circle1"></span>
+    <span class="circle2"></span>
+    <span class="circle3"></span>
+    <span class="circle4"></span>
+    <span class="circle5"></span>
+    <span class="circle6"></span>
+    <span class="circle7"></span>
+  </div>
+  <div class="contenedorGeneral">
+    <div class="presentacion">
+      <h1>Bienvenido</h1>
+      <h2 class="mt-1 mb-4">Buenos días, Carlos!</h2>
+      <ion-button type="submit" (click)="authService.SignOut()" expand="block">Logout</ion-button>
+    </div>
+    <div class="opciones">
+      <div class="opcion p-4 mb-3">
+        <div class="datos">
+          <ion-icon name="person-outline"></ion-icon>Detalles de perfil
+        </div>
+        <div class="flecha"></div>
+      </div>
+      <div class="opcion p-4 mb-6">
+        <div class="datos">
+          <ion-icon name="wifi-outline"></ion-icon>WiFi 
+        </div>
+        <div class="flecha"></div>
+      </div>
+      <div class="opcion p-4 mb-3">
+        <div class="datos">
+          <ion-icon name="notifications-outline"></ion-icon>Notificaciones
+        </div>
+        <div class="flecha"></div>
+      </div>
+      <div class="opcion p-4 mb-3">
+        <div class="datos">
+          <ion-icon name="help-buoy-outline"></ion-icon> Soporte
+        </div>
+        <div class="flecha"></div>
+      </div>
+    </div>
+  </div>
   <app-navbar></app-navbar>
 </ion-content>

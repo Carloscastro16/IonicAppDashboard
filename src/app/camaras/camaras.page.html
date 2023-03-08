@@ -14,35 +14,7 @@
       <h2 class="mt-1 mb-4">Buenos días, Carlos!</h2>
       <ion-button type="submit" (click)="authService.SignOut()" expand="block">Logout</ion-button>
     </div>
-    <div class="backdrop-blur-xs">
-      <div class="container datosZona" *ngIf="items | async as data">
-        <ion-grid>
-          <ion-row>
-            <ion-col class="bateria">
-              <p>Bateria</p>
-              <div class="datos">
-                <ion-icon name="battery-half-outline"></ion-icon>
-                <p>{{data[0]}}%</p>
-              </div>
-            </ion-col>
-            <ion-col>
-              <p>Temperatura</p>
-              <div class="datos">
-                <ion-icon name="thermometer-outline"></ion-icon>
-                <p>{{data[2]}}°</p>
-              </div>
-            </ion-col>
-            <ion-col>
-              <p>Humedad</p>
-              <div class="datos">
-                <ion-icon name="water-outline"></ion-icon>
-                <p>{{data[1]}}%</p>
-              </div>
-            </ion-col>
-          </ion-row>
-        </ion-grid>
-      </div>
-    </div>
+    <app-datos-zona></app-datos-zona>
     <div class="container">
       <div class="titulo mb-3 mt-2">
         <h2>Fotos de la semana</h2>
@@ -68,7 +40,7 @@
       </div>
       <div class="camaras columns-2">
         <div class="video">
-          <iframe width="560" height="315" src="https://www.youtube.com/embed/LRTOUqLmuAU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+          <iframe width="560" height="315" src="http://192.168.3.88/cam-lo.jpg" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
         </div>
         <div class="video">
           <img src="https://images.unsplash.com/photo-1559386484-97dfc0e15539?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1234&q=80" alt="song">

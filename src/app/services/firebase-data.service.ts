@@ -17,8 +17,11 @@ export class FirebaseDataService {
       return itemsCollection.add(data);
   }
   /* updateDoc(path, id){
-
+  
   } */
+  getDataGenerales(path: string){
+    return this.afdb.object(path).valueChanges();
+  }
   getDoc<tipo>(path: string){
     const doc: AngularFirestoreDocument<tipo> = this.FireStore.doc(path);
     return doc.valueChanges();

@@ -2,11 +2,11 @@ import { Component, OnInit } from '@angular/core';
 import { AuthenticationService } from '../services/auth.service';
 
 @Component({
-  selector: 'app-ajustes',
-  templateUrl: './ajustes.page.html',
-  styleUrls: ['./ajustes.page.scss', '../app.component.scss'],
+  selector: 'app-iguanas',
+  templateUrl: './iguanas.page.html',
+  styleUrls: ['./iguanas.page.scss', '../app.component.scss'],
 })
-export class AjustesPage implements OnInit {
+export class IguanasPage implements OnInit {
 
   constructor(
     public authService: AuthenticationService

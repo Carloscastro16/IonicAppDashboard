@@ -1,5 +1,5 @@
 
-$verde: #AAC86B;
+
 $verdeOscuro: #48692C;
 $gris: #828282;
 $blanco: #F8F8FF;
@@ -10,7 +10,7 @@ $azulMedio: #006daa;
 $rosa: #F28482;
 $rosita: #FF8484;
 $verde: #0e310d;
-$verdeClaro: rgba(150,201,61,.4);
+$verdeClaro: rgba(150,201,61,.6);
 $verdeClaroD: rgba(150,201,61,.3);
 $azulin: rgb(0, 152, 134);
 $azulinD: rgb(0, 152, 134, .6);
@@ -130,13 +130,13 @@ ion-content{
             margin-bottom: 1rem;
             font-weight: bold;
             h1{
-                color: $blanco;
+                color: $azulin;
                 font-size: 1.1rem;
                 margin: 0 !important;
                 z-index: 3;
             }
             h2{
-                color: $negro;
+                color: $verde;
                 font-size: 1.25rem;
                 z-index: 3;
             }

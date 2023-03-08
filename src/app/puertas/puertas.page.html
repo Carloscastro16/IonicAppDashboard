@@ -14,65 +14,35 @@
       <h2 class="mt-1 mb-4">Buenos días, Carlos!</h2>
       <ion-button type="submit" (click)="authService.SignOut()" expand="block">Logout</ion-button>
     </div>
-    <div class="backdrop-blur-xs">
-      <div class="container datosZona" *ngIf="items | async as data">
-        <ion-grid>
-          <ion-row>
-            <ion-col class="bateria">
-              <p>Bateria</p>
-              <div class="datos">
-                <ion-icon name="battery-half-outline"></ion-icon>
-                <p>{{data[0]}}%</p>
-              </div>
-            </ion-col>
-            <ion-col>
-              <p>Temperatura</p>
-              <div class="datos">
-                <ion-icon name="thermometer-outline"></ion-icon>
-                <p>{{data[2]}}°</p>
-              </div>
-            </ion-col>
-            <ion-col>
-              <p>Humedad</p>
-              <div class="datos">
-                <ion-icon name="water-outline"></ion-icon>
-                <p>{{data[1]}}%</p>
-              </div>
-            </ion-col>
-          </ion-row>
-        </ion-grid>
-      </div>
-    </div>
-    <div class="backdrop-blur-xs">
-      <div class="container funciones">
-        <div class="columns-2">
-          <div class="camara backdrop-blur-xs bg-white/15">
-            <div class="funcData">
-              <p>Luces</p>
-              <ion-icon name="videocam-outline"></ion-icon>
-              <ion-toggle color="primary" (ionChange)="luzOn()"></ion-toggle>
-            </div>
+    <app-datos-zona></app-datos-zona>
+    <div class="container funciones">
+      <div class="columns-2">
+        <div class="">
+          <div class="funcData backdrop-blur-xs">
+            <p>Luces</p>
+            <ion-icon name="videocam-outline"></ion-icon>
+            <ion-toggle color="primary" (ionChange)="luzOn()"></ion-toggle>
           </div>
-          <div class="backdrop-blur-xs bg-white/15">
-            <div class="funcData">
-              <p>Sonido</p>
-              <ion-icon name="key-outline"></ion-icon>
-              <ion-toggle color="primary" (ionChange)="sonidoOn()"></ion-toggle>
-            </div>
+        </div>
+        <div class="">
+          <div class="funcData backdrop-blur-xs">
+            <p>Sonido</p>
+            <ion-icon name="key-outline"></ion-icon>
+            <ion-toggle color="primary" (ionChange)="sonidoOn()"></ion-toggle>
           </div>
-          <div class="backdrop-blur-xs bg-white/15">
-            <div class="funcData">
-              <p>Techo</p>
-              <ion-icon name="cloudy-night-outline"></ion-icon>
-              <ion-toggle color="primary" (ionChange)="doorOn()"></ion-toggle>
-            </div>
+        </div>
+        <div class="">
+          <div class="funcData backdrop-blur-xs">
+            <p>Techo</p>
+            <ion-icon name="cloudy-night-outline"></ion-icon>
+            <ion-toggle color="primary" (ionChange)="doorOn()"></ion-toggle>
           </div>
-          <div class="backdrop-blur-xs bg-white/15">
-            <div class="funcData">
-              <p>Camaras</p>
-              <ion-icon name="megaphone-outline"></ion-icon>
-              <ion-toggle color="primary" (ionChange)="camOn()"></ion-toggle>
-            </div>
+        </div>
+        <div class="">
+          <div class="funcData backdrop-blur-xs">
+            <p>Camaras</p>
+            <ion-icon name="megaphone-outline"></ion-icon>
+            <ion-toggle color="primary" (ionChange)="camOn()"></ion-toggle>
           </div>
         </div>
       </div>
