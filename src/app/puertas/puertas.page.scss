@@ -1,6 +1,22 @@
+
+$verde: #AAC86B;
+$verdeOscuro: #48692C;
+$gris: #828282;
+$blanco: #F8F8FF;
+$negro: #000000;
+$rosa: #F28482;
+$rosita: #FF8484;
+$textos: #0e310d;
+$secundario: rgba(150,201,61,.6);
+$secundarioD: rgba(150,201,61,.3);
+$primario: rgb(0, 152, 134);
+$primarioD: rgb(0, 152, 134, .6);
+$cafe: #704e2e;
+
 ion-content{
     .funciones{
         .funcData{
+            background-color: $primarioD;
             position: relative;
             box-shadow: 4px 8px 39px -1px rgb(0 0 0 / 75%);
             display: flex;
@@ -11,12 +27,13 @@ ion-content{
             margin-bottom: 1rem;
             padding: 1rem;
             cursor: pointer;
-            z-index: 3;
+            z-index: 2;
             p{
+                color: $textos;
                 margin-bottom: .8rem;
-
             }
             ion-icon{
+                color: $textos;
                 font-size: 43px;
             }
         }

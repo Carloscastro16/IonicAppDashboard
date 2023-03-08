@@ -13,7 +13,9 @@ import { AngularFirestore, AngularFirestoreCollection } from '@angular/fire/comp
 })
 export class PuertasPage implements OnInit {
   items: Observable<any[]>;
-  valorL: Observable<any[]>;
+  valorL: Observable<boolean>;
+  /* valorL: Subscription; */
+  otherValue!: boolean;
   valorLed = false;
   valorBuzz =  false;
   valorDoor =  true;
@@ -24,22 +26,25 @@ export class PuertasPage implements OnInit {
     public afdb: AngularFireDatabase
   ) { 
     this.items = afdb.list('App/Sensores/Generales').valueChanges();
-    this.valorL = afdb.list('App/ZonaNorte/Actuadores/led1').valueChanges();
     
+    /* this.valorL = afdb.list('App/ZonaNorte/Actuadores/led1').valueChanges().subscribe(data => this.otherValue = data as unknown as boolean); */
+    this.valorL = afdb.list('App/ZonaNorte/Actuadores/led1').valueChanges() as Observable<unknown> as Observable<boolean>;
+    console.log(this.valorL)
   }
   dbLed = this.afdb.database.ref('App/ZonaNorte/Actuadores/led1');
   dbBuzz = this.afdb.database.ref('App/ZonaNorte/Actuadores/buzz');
   dbDoor = this.afdb.database.ref('App/ZonaNorte/Leds/led1');
   dbCam = this.afdb.database.ref('App/ZonaNorte/Leds/led1');
 
-  ngOnInit() {
-    this.dbBuzz.set(false);
-    this.dbLed.set(false);
+  async ngOnInit() {
+    /* this.dbBuzz.set(false);
+    this.dbLed.set(false); */
+    this.otherValue = await this.valorL.toPromise();
+    console.log(this.otherValue)
   }
-  
   luzOn(){
-    this.valorLed = !this.valorLed;
-    this.dbLed.set(this.valorLed);
+    this.otherValue = !this.otherValue;
+    this.dbLed.set(this.otherValue);
   }
   sonidoOn(){
     this.valorBuzz = !this.valorBuzz;
