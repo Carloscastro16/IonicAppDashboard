@@ -15,6 +15,7 @@ export class PuertasPage implements OnInit {
   items: any;
   valorL: Observable<boolean>;
   data: any;
+  actuadores: any;
   /* valorL: Subscription; */
   otherValue!: boolean;
   valorLed = false;
@@ -28,6 +29,8 @@ export class PuertasPage implements OnInit {
   ) {
     this.fireService.getDataGenerales('App/Sensores/Generales')
       .subscribe(data => this.data = data);
+    this.fireService.getDataGenerales('App/ZonaNorte/Actuadores')
+      .subscribe(data => this.actuadores = data);
     /* this.items = afdb.object('App/Sensores/Generales').valueChanges()
                 .subscribe(data => this.data = data); */
     // Object.keys(datos.historico) obtendria los labels del documento historico
@@ -38,12 +41,14 @@ export class PuertasPage implements OnInit {
   }
   dbLed = this.afdb.database.ref('App/ZonaNorte/Actuadores/led1');
   dbBuzz = this.afdb.database.ref('App/ZonaNorte/Actuadores/buzz');
-  dbDoor = this.afdb.database.ref('App/ZonaNorte/Leds/led1');
-  dbCam = this.afdb.database.ref('App/ZonaNorte/Leds/led1');
+  dbDoor = this.afdb.database.ref('App/ZonaNorte/Actuadores/puerta');
+  dbCam = this.afdb.database.ref('App/ZonaNorte/Actuadores/cam');
 
   async ngOnInit() {
-    /* this.dbBuzz.set(false);
-    this.dbLed.set(false); */
+    this.dbBuzz.set(false);
+    this.dbLed.set(false);
+    this.dbDoor.set(false);
+    this.dbCam.set(false);
     this.otherValue = await this.valorL.toPromise();
     console.log(this.otherValue)
     
@@ -62,6 +67,6 @@ export class PuertasPage implements OnInit {
   }
   camOn(){
     this.valorCam = !this.valorCam;
-    this.dbDoor.set(this.valorCam);
+    this.dbCam.set(this.valorCam);
   }
 }

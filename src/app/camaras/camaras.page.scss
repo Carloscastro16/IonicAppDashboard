@@ -1,3 +1,17 @@
+$verde: #AAC86B;
+$verdeOscuro: #48692C;
+$gris: #828282;
+$blanco: #F8F8FF;
+$negro: #000000;
+$rosa: #F28482;
+$rosita: #FF8484;
+$textos: #0e310d;
+$secundario: rgba(150,201,61,.6);
+$secundarioD: rgba(150,201,61,.3);
+$primario: rgb(0, 152, 134);
+$primarioD: rgb(0, 152, 134, .6);
+$cafe: #704e2e;
+
 input[type=radio] {
     display: none;
 }
@@ -146,10 +160,12 @@ ion-content{
     .contenedorGeneral{
         .container{
             .titulo{
+                color: $textos;
                 width: 100%;
                 h2{
                     font-size: 1.2rem;
                     font-weight: bold;
+                    
                 }
             }
         }
@@ -157,6 +173,7 @@ ion-content{
             h2{
                 font-size: 1.2rem;
                 font-weight: bold;
+                color: $textos;
             }
             .video{
                 height: 10rem;
