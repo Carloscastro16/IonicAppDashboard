@@ -12,8 +12,9 @@ import { AngularFirestore, AngularFirestoreCollection } from '@angular/fire/comp
   styleUrls: ['./puertas.page.scss', '../app.component.scss'],
 })
 export class PuertasPage implements OnInit {
-  items: Observable<any[]>;
+  items: any;
   valorL: Observable<boolean>;
+  data: any;
   /* valorL: Subscription; */
   otherValue!: boolean;
   valorLed = false;
@@ -22,11 +23,15 @@ export class PuertasPage implements OnInit {
   valorCam =  true;
   constructor(
     public authService: AuthenticationService,
-    public firebaseSerevice: FirebaseDataService,
+    public fireService: FirebaseDataService,
     public afdb: AngularFireDatabase
-  ) { 
-    this.items = afdb.list('App/Sensores/Generales').valueChanges();
-    
+  ) {
+    this.fireService.getDataGenerales('App/Sensores/Generales')
+      .subscribe(data => this.data = data);
+    /* this.items = afdb.object('App/Sensores/Generales').valueChanges()
+                .subscribe(data => this.data = data); */
+    // Object.keys(datos.historico) obtendria los labels del documento historico
+    //Object.values(datos.historico) obtendria los valores del documento historico
     /* this.valorL = afdb.list('App/ZonaNorte/Actuadores/led1').valueChanges().subscribe(data => this.otherValue = data as unknown as boolean); */
     this.valorL = afdb.list('App/ZonaNorte/Actuadores/led1').valueChanges() as Observable<unknown> as Observable<boolean>;
     console.log(this.valorL)
@@ -41,6 +46,7 @@ export class PuertasPage implements OnInit {
     this.dbLed.set(false); */
     this.otherValue = await this.valorL.toPromise();
     console.log(this.otherValue)
+    
   }
   luzOn(){
     this.otherValue = !this.otherValue;

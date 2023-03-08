@@ -14,35 +14,7 @@
       <h2 class="mt-1 mb-4">Buenos días, Carlos!</h2>
       <ion-button type="submit" (click)="authService.SignOut()" expand="block">Logout</ion-button>
     </div>
-    <div class="backdrop-blur-xs">
-      <div class="datosZona" *ngIf="items | async as data">
-        <ion-grid>
-          <ion-row>
-            <ion-col class="bateria">
-              <p>Bateria</p>
-              <div class="datos">
-                <ion-icon name="battery-half-outline"></ion-icon>
-                <p>{{data[0]}}%</p>
-              </div>
-            </ion-col>
-            <ion-col>
-              <p>Temperatura</p>
-              <div class="datos">
-                <ion-icon name="thermometer-outline"></ion-icon>
-                <p>{{data[2]}}°</p>
-              </div>
-            </ion-col>
-            <ion-col>
-              <p>Humedad</p>
-              <div class="datos">
-                <ion-icon name="water-outline"></ion-icon>
-                <p>{{data[1]}}%</p>
-              </div>
-            </ion-col>
-          </ion-row>
-        </ion-grid>
-      </div>
-    </div>
+    <app-datos-zona></app-datos-zona>
     <div class="container">
       <div class="titulo mb-3 mt-2">
         <h2>Fotos de la semana</h2>
