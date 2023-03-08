@@ -20,77 +20,8 @@
     </div>
     <app-datos-zona></app-datos-zona>
     
-    <div class="container funciones">
-      <div class="columns-2">
-        <div class="camara backdrop-blur-sm bg-white/15">
-          <div class="funcData" [routerLink]="['/camaras']">
-            <p>Camaras</p>
-            <ion-icon name="videocam-outline"></ion-icon>
-          </div>
-        </div>
-        <div class="backdrop-blur-sm bg-white/15">
-          <div class="funcData" [routerLink]="['/puertas']">
-            <p>Controles</p>
-            <ion-icon name="key-outline"></ion-icon>
-          </div>
-        </div>
-        <div class="backdrop-blur-sm bg-white/15">
-          <div class="funcData" [routerLink]="['/clima']">
-            <p>Clima</p>
-            <ion-icon name="cloudy-night-outline"></ion-icon>
-          </div>
-        </div>
-        <div class="backdrop-blur-sm bg-white/15">
-          <div class="funcData" [routerLink]="['/deteccion']">
-            <p>Protección</p>
-            <ion-icon name="megaphone-outline"></ion-icon>
-          </div>
-        </div>
-      </div>
-    </div>
 
-    <div class="registros backdrop-blur-xs bg-white/15">
-      <h2 class="mb-3">Fauna</h2>
-      <div class="registro flex" *ngIf="iguanas | async as cant">
-        <div class="porcentaje">
-          <span></span>
-        </div>
-        <p>{{cant[0]}}</p>
-        <div class="anotacion flex items-center justify-between">
-          <div class="info flex-initial w-48">
-            <h3>Iguanas</h3>
-            <p>Ultimo registro:</p>
-          </div>
-          <div class="boton">
-            <ion-button shape="round">Ver</ion-button>
-          </div>
-        </div>
-      </div>
-      <div class="registro flex" *ngIf="pajaros | async as cant">
-        <p>{{cant[0]}}</p>
-        <div class="anotacion flex items-center justify-between">
-          <div class="info flex-initial w-48">
-            <h3>Pajaros</h3>
-            <p>Ultimo registro:</p>
-          </div>
-          <div class="boton">
-            <ion-button shape="round">Ver</ion-button>
-          </div>
-        </div>
-      </div>
-      <div class="registro flex" *ngIf="ardillas | async as cant">
-        <p>{{cant[0]}}</p>
-        <div class="anotacion flex items-center justify-between">
-          <div class="info flex-initial w-48">
-            <h3>Ardillas</h3>
-            <p>Ultimo registro:</p>
-          </div>
-          <div class="boton" >
-            <ion-button shape="round">Ver</ion-button>
-          </div>
-        </div>
-      </div>
-    </div>
+
   </div>
   <app-navbar></app-navbar>
 </ion-content>
