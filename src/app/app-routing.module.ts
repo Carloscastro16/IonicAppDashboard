@@ -42,6 +42,10 @@ const routes: Routes = [
     path: 'graficas',
     loadChildren: () => import('./graficas/graficas.module').then( m => m.GraficasPageModule)
   },
+  {
+    path: 'iguanas',
+    loadChildren: () => import('./iguanas/iguanas.module').then( m => m.IguanasPageModule)
+  },
 
 
 ];
