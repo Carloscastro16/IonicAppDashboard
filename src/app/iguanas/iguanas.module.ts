@@ -7,9 +7,11 @@ import { IonicModule } from '@ionic/angular';
 import { IguanasPageRoutingModule } from './iguanas-routing.module';
 
 import { IguanasPage } from './iguanas.page';
+import { ComponentsModule } from '../components/components.module';
 
 @NgModule({
   imports: [
+    ComponentsModule,
     CommonModule,
     FormsModule,
     IonicModule,
