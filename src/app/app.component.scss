@@ -19,6 +19,7 @@ $cafe: #704e2e;
     position: absolute;
     border-radius: 50%;
     border: $primario solid 4px;
+    filter: blur(3px);
 }
 ion-content{
     --background: #d6fffa;

@@ -1,28 +1,27 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
     <ion-title>
-      Charts.js in Ionic 5
+      Graficas
     </ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <div class="ion-padding">
-    <ion-card>
-      <ion-card-header>
-        Doughnut Chart
-      </ion-card-header>
-      <ion-card-content>
-        <canvas #doughnutCanvas style="position: relative; height:20vh; width:40vw"></canvas>
-      </ion-card-content>
-    </ion-card>
-    <ion-card>
-      <ion-card-header>
-        Line Chart
-      </ion-card-header>
-      <ion-card-content>
-        <canvas #lineCanvas style="position: relative; height:20vh; width:40vw"></canvas>
-      </ion-card-content>
-    </ion-card>
+  <div class="contenedorGeneral">
+    <div class="presentacion">
+      <h1>Bienvenido</h1>
+      <h2 class="mt-1 mb-4">Buen día<!-- , Carlos! --></h2>
+      <ion-button type="submit" (click)="authService.SignOut()" expand="block">Logout</ion-button>
+    </div>
+    <div class="ion-padding">
+      <ion-card>
+        <ion-card-header>
+          Doughnut Chart
+        </ion-card-header>
+        <ion-card-content>
+          <canvas #doughnutCanvas style="position: relative; height:20vh; width:40vw"></canvas>
+        </ion-card-content>
+      </ion-card>
+    </div>
   </div>
 </ion-content>

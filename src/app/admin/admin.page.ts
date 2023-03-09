@@ -6,7 +6,7 @@ import { AngularFirestore, AngularFirestoreCollection } from '@angular/fire/comp
 import { Sensores } from '../interfaces';
 import { Observable } from 'rxjs/Observable';
 import { getDatabase } from "firebase/database";
-
+import { User } from '../services/user';
 @Component({
   selector: 'app-admin',
   templateUrl: './admin.page.html',
@@ -20,7 +20,7 @@ export class AdminPage implements OnInit {
     pajaros: 0,
     ardillas: 0
   };
-  
+  uid!: string;
   items: Observable<any[]>;
   iguanas: Observable<any[]>;
   pajaros: Observable<any[]>;
@@ -28,8 +28,8 @@ export class AdminPage implements OnInit {
 
   constructor(
     public authService: AuthenticationService,
-    public firebaseSerevice: FirebaseDataService,
-    public afdb: AngularFireDatabase
+    public firebaseService: FirebaseDataService,
+    public afdb: AngularFireDatabase,
   ) { 
     this.items = afdb.list('App/Sensores/Generales').valueChanges();
     /* this.itemsCollection = afs.collection<Sensores>('App/Sensores/');
@@ -40,9 +40,9 @@ export class AdminPage implements OnInit {
   }
   databaseRefBat = this.afdb.database.ref('App/Sensores/bat');
   
-  ngOnInit() {
+  async ngOnInit() {
     console.log(this.iguanas);
-    
+    this.getUid();
     /* const path = "App/Sensores/";
     this.firebaseService.getDoc<Sensores>(path).subscribe(res => {
       console.log("humedad: " + res?.hum);
@@ -59,7 +59,22 @@ export class AdminPage implements OnInit {
       }
     }) */
   }
-  
+  async getUid(){
+    const uid = await this.authService.getUID();
+    if(uid){
+      this.uid = uid;
+    }else{
+      console.log("no existe el uid");
+    }
+    this.obtenerDatos();
+  }
+  obtenerDatos(){
+    const path = 'users/';
+    const id = this.uid;
+    this.firebaseService.getDoc<User>(path, id).subscribe((res: any) =>{
+      console.log(res?.displayName);
+    });
+  }
   /* guardarDatos(){
     const path = 'Sensores';
     const newled: led = {

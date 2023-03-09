@@ -1,9 +1,11 @@
 import { AfterViewInit, Component, ElementRef,OnInit, ViewChild } from '@angular/core';
 import { Chart } from 'chart.js/auto';
+import { AuthenticationService } from '../services/auth.service';
+import { FirebaseDataService } from '../services/firebase-data.service';
 @Component({
   selector: 'app-graficas',
   templateUrl: './graficas.page.html',
-  styleUrls: ['./graficas.page.scss'],
+  styleUrls: ['./graficas.page.scss', '../app.component.scss'],
 })
 export class GraficasPage implements AfterViewInit {
   // Importing ViewChild. We need @ViewChild decorator to get a reference to the local variable 
@@ -12,9 +14,16 @@ export class GraficasPage implements AfterViewInit {
   @ViewChild('lineCanvas') private lineCanvas!: ElementRef;
   doughnutChart: any;
   lineChart: any;
-
-  constructor() {
-  
+  datosG: any;
+  constructor(
+    public authService: AuthenticationService,
+    public fireService: FirebaseDataService
+  ) {
+    this.fireService.getDataGenerales('App/detecciones').subscribe(data => {
+    this.datosG = data;
+    this.doughnutChartMethod();
+    });
+    
   }
   // When we try to call our chart to initialize methods in ngOnInit() it shows an error nativeElement of undefined. 
   // So, we need to call all chart methods in ngAfterViewInit() where @ViewChild and @ViewChildren will be resolved.
@@ -25,10 +34,10 @@ export class GraficasPage implements AfterViewInit {
     this.doughnutChart = new Chart(this.doughnutCanvas.nativeElement, {
       type: 'doughnut',
       data: {
-        labels: ['BJP', 'Congress', 'AAP', 'CPM', 'SP'],
+        labels: Object.keys(this.datosG.part),
         datasets: [{
           label: '# of Votes',
-          data: [50, 29, 15, 10, 7],
+          data: Object.values(this.datosG.part),
           backgroundColor: [
             'rgba(255, 159, 64, 0.2)',
             'rgba(255, 99, 132, 0.2)',
