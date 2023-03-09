@@ -2,13 +2,17 @@ import { Injectable } from '@angular/core';
 import { AngularFirestore, AngularFirestoreDocument, AngularFirestoreCollection } from '@angular/fire/compat/firestore';
 import { AngularFireDatabase } from '@angular/fire/compat/database';
 import { getDatabase } from "firebase/database";
+import { AngularFireAuth } from '@angular/fire/compat/auth';
 @Injectable({
   providedIn: 'root'
 })
 export class FirebaseDataService {
 
-  constructor(private FireStore: AngularFirestore,
-    public afdb: AngularFireDatabase) { }
+  constructor(
+    private FireStore: AngularFirestore,
+    public afdb: AngularFireDatabase,
+    public authFirebase: AngularFireAuth
+    ) { }
 
   /* Funcion general para añadir datos a la base */
   createDoc<tipo>(data: tipo, enlace: string){
@@ -22,12 +26,14 @@ export class FirebaseDataService {
   getDataGenerales(path: string){
     return this.afdb.object(path).valueChanges();
   }
-  getDoc<tipo>(path: string){
-    const doc: AngularFirestoreDocument<tipo> = this.FireStore.doc(path);
-    return doc.valueChanges();
+  getDoc<tipo>(path: string, uid:string){
+    return this.FireStore.collection(path).doc<tipo>(uid).valueChanges;
+    /* const doc: AngularFirestoreDocument<tipo> = this.FireStore.doc(path + uid);
+    return doc.valueChanges(); */
   }
   getColl<tipo>(path: string){
     const collection: AngularFirestoreCollection<tipo> = this.FireStore.collection(path);
     return collection.valueChanges();
   }
+  
 }

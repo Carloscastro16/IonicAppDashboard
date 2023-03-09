@@ -11,7 +11,7 @@
   <div class="contenedorGeneral">
     <div class="presentacion">
       <h1>Bienvenido</h1>
-      <h2 class="mt-1 mb-4">Buenos días, Carlos!</h2>
+      <h2 class="mt-1 mb-4">Buenos días</h2>
       <ion-button type="submit" (click)="authService.SignOut()" expand="block">Logout</ion-button>
     </div>
     <app-datos-zona></app-datos-zona>
@@ -20,28 +20,28 @@
         <div class="">
           <div class="funcData backdrop-blur-xs">
             <p>Luces</p>
-            <ion-icon name="videocam-outline"></ion-icon>
+            <ion-icon name="bulb-outline"></ion-icon>
             <ion-toggle color="primary" (ionChange)="luzOn()"></ion-toggle>
           </div>
         </div>
         <div class="">
           <div class="funcData backdrop-blur-xs">
             <p>Sonido</p>
-            <ion-icon name="key-outline"></ion-icon>
+            <ion-icon name="megaphone-outline"></ion-icon>
             <ion-toggle color="primary" (ionChange)="sonidoOn()"></ion-toggle>
           </div>
         </div>
         <div class="">
           <div class="funcData backdrop-blur-xs">
-            <p>Techo</p>
-            <ion-icon name="cloudy-night-outline"></ion-icon>
+            <p>Puerta</p>
+            <ion-icon name="walk-outline"></ion-icon>
             <ion-toggle color="primary" (ionChange)="doorOn()"></ion-toggle>
           </div>
         </div>
         <div class="">
           <div class="funcData backdrop-blur-xs">
             <p>Camaras</p>
-            <ion-icon name="megaphone-outline"></ion-icon>
+            <ion-icon name="videocam-outline"></ion-icon>
             <ion-toggle color="primary" (ionChange)="camOn()"></ion-toggle>
           </div>
         </div>

@@ -215,7 +215,7 @@ ion-content{
         }
         .registros{
             filter: drop-shadow(0px 6px 17px -3px rgba(0, 0, 0, 0.45));
-            color: $blanco;
+            color: $verde;
             h2{
                 font-size: 1.2rem;
                 color: $negro;
@@ -223,6 +223,9 @@ ion-content{
             }
             p{
                 margin: .5rem 1rem .5rem 1rem;
+            }
+            h3{
+                color: $verde;
             }
             .registro{
                 .anotacion{

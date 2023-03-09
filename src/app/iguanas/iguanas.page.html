@@ -18,79 +18,30 @@
       <h2 class="mt-1 mb-4">Buenos días, Carlos!</h2>
       <ion-button type="submit" (click)="authService.SignOut()" expand="block">Logout</ion-button>
     </div>
-    <app-datos-zona></app-datos-zona>
-    
-    <div class="container funciones">
-      <div class="columns-2">
-        <div class="camara backdrop-blur-sm bg-white/15">
-          <div class="funcData" [routerLink]="['/camaras']">
-            <p>Camaras</p>
-            <ion-icon name="videocam-outline"></ion-icon>
-          </div>
-        </div>
-        <div class="backdrop-blur-sm bg-white/15">
-          <div class="funcData" [routerLink]="['/puertas']">
-            <p>Controles</p>
-            <ion-icon name="key-outline"></ion-icon>
-          </div>
-        </div>
-        <div class="backdrop-blur-sm bg-white/15">
-          <div class="funcData" [routerLink]="['/clima']">
-            <p>Clima</p>
-            <ion-icon name="cloudy-night-outline"></ion-icon>
-          </div>
-        </div>
-        <div class="backdrop-blur-sm bg-white/15">
-          <div class="funcData" [routerLink]="['/deteccion']">
-            <p>Protección</p>
-            <ion-icon name="megaphone-outline"></ion-icon>
-          </div>
-        </div>
+    <div class="imagen-iguana">
+      <div class="iguanas">
+        <h2>Iguanas</h2>
       </div>
-    </div>
-
-    <div class="registros backdrop-blur-xs bg-white/15">
-      <h2 class="mb-3">Fauna</h2>
-      <div class="registro flex" *ngIf="iguanas | async as cant">
-        <div class="porcentaje">
-          <span></span>
-        </div>
-        <p>{{cant[0]}}</p>
-        <div class="anotacion flex items-center justify-between">
-          <div class="info flex-initial w-48">
-            <h3>Iguanas</h3>
-            <p>Ultimo registro:</p>
-          </div>
-          <div class="boton">
-            <ion-button shape="round">Ver</ion-button>
-          </div>
-        </div>
+      <div class="cards">
+        <label class="card" for="item-1" id="song-1">
+          <img src="https://plus.unsplash.com/premium_photo-1669261232192-6c625a80375e?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80" alt="song">
+        </label>
+        <label class="card" for="item-2" id="song-2">
+          <img src="https://plus.unsplash.com/premium_photo-1669261232192-6c625a80375e?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80" alt="song">
+        </label>
+        <label class="card" for="item-3" id="song-3">
+          <img src="https://plus.unsplash.com/premium_photo-1669261232192-6c625a80375e?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80" alt="song">
+        </label>
       </div>
-      <div class="registro flex" *ngIf="pajaros | async as cant">
-        <p>{{cant[0]}}</p>
-        <div class="anotacion flex items-center justify-between">
-          <div class="info flex-initial w-48">
-            <h3>Pajaros</h3>
-            <p>Ultimo registro:</p>
-          </div>
-          <div class="boton">
-            <ion-button shape="round">Ver</ion-button>
-          </div>
-        </div>
-      </div>
-      <div class="registro flex" *ngIf="ardillas | async as cant">
-        <p>{{cant[0]}}</p>
-        <div class="anotacion flex items-center justify-between">
-          <div class="info flex-initial w-48">
-            <h3>Ardillas</h3>
-            <p>Ultimo registro:</p>
-          </div>
-          <div class="boton" >
-            <ion-button shape="round">Ver</ion-button>
-          </div>
-        </div>
+      <div class="descripcion">
+        <p>Animales diurnos caracterizados por su cabeza ancha, hocico redondo, papada colgante en la garganta, cuerpo robusto, 4 fuertes patas con uñas duras y afiladas y cresta desde la cabeza hasta su larga, delgada y aplanada cola que les sirve como látigo para defenderse.</p>
       </div>
     </div>
   </div>
   <app-navbar></app-navbar>
 </ion-content>
+<script>
+  $('input').on('change', function() {
+  $('body').toggleClass('blue');
+});
+</script>
