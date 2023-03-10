@@ -5,5 +5,39 @@
 </ion-header>
 
 <ion-content>
-
+  <div class="contenedorGeneral">
+    <div class="circulos">
+      <span class="circle1"></span>
+      <span class="circle2"></span>
+      <span class="circle3"></span>
+      <span class="circle4"></span>
+      <span class="circle5"></span>
+      <span class="circle6"></span>
+      <span class="circle7"></span>
+    </div>
+    <div class="presentacion">
+      <h1>Bienvenido</h1>
+      <h2 class="mt-1 mb-4">Buenos días, Carlos!</h2>
+      <ion-button type="submit" (click)="authService.SignOut()" expand="block">Logout</ion-button>
+    </div>
+    <div class="imagen-pajaro">
+      <div class="pajarito">
+        <h2>Pajaros</h2>
+      </div>
+      <div class="cards">
+        <label class="card" for="item-1" id="song-1">
+          <img src="https://acortar.link/cHCHBQ" alt="song">
+        </label>
+        <label class="card" for="item-2" id="song-2">
+          <img src="https://acortar.link/cHCHBQ" alt="song">
+        </label>
+        <label class="card" for="item-3" id="song-3">
+          <img src="https://acortar.link/cHCHBQ" alt="song">
+        </label>
+      </div>
+      <div class="descripcion">
+        <p>Los zanates son aves con dimorfismo sexual. Los machos poseen un plumaje negro, iridiscente y brillante; llegan a medir hasta 43 cm y pesan cerca de 230 gramos. Por su parte, las hembras miden cerca de 33 cm, pesan 125 gramos en promedio y poseen un plumaje café opaco.</p>
+      </div>
+    </div>
+  </div>
 </ion-content>
