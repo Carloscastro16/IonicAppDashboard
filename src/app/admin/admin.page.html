@@ -15,7 +15,7 @@
     </div>
     <div class="presentacion">
       <h1>Bienvenido</h1>
-      <h2 class="mt-1 mb-4">Buen día<!-- , Carlos! --></h2>
+      <h2 class="mt-1 mb-4">Buen día,{{user}}<!-- , Carlos! --></h2>
       <ion-button type="submit" (click)="authService.SignOut()" expand="block">Logout</ion-button>
     </div>
     <app-datos-zona></app-datos-zona>
@@ -42,7 +42,7 @@
         </div>
         <div class="backdrop-blur-sm bg-white/15">
           <div class="funcData" [routerLink]="['/deteccion']">
-            <p>Protección</p>
+            <p>Avisos</p>
             <ion-icon name="megaphone-outline"></ion-icon>
           </div>
         </div>

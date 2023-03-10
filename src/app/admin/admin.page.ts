@@ -20,12 +20,13 @@ export class AdminPage implements OnInit {
     pajaros: 0,
     ardillas: 0
   };
-  uid!: string;
+  user!: string;
+  uid!: any;
   items: Observable<any[]>;
   iguanas: Observable<any[]>;
   pajaros: Observable<any[]>;
   ardillas: Observable<any[]>;
-
+  name!: string;
   constructor(
     public authService: AuthenticationService,
     public firebaseService: FirebaseDataService,
@@ -42,7 +43,9 @@ export class AdminPage implements OnInit {
   
   async ngOnInit() {
     console.log(this.iguanas);
-    this.getUid();
+    this.uid = this.getUid();
+    this.user = await this.firebaseService.getUserDisplayName(this.uid);
+    
     /* const path = "App/Sensores/";
     this.firebaseService.getDoc<Sensores>(path).subscribe(res => {
       console.log("humedad: " + res?.hum);
@@ -61,18 +64,20 @@ export class AdminPage implements OnInit {
   }
   async getUid(){
     const uid = await this.authService.getUID();
-    if(uid){
+    return uid
+    /* if(uid){
       this.uid = uid;
+      console.log(uid);
     }else{
       console.log("no existe el uid");
-    }
-    this.obtenerDatos();
+    } */
+    /* this.obtenerDatos(); */
   }
-  obtenerDatos(){
+  obtenerDatos(id: any){
     const path = 'users/';
-    const id = this.uid;
     this.firebaseService.getDoc<User>(path, id).subscribe((res: any) =>{
       console.log(res?.displayName);
+      this.name = res.displayName;
     });
   }
   /* guardarDatos(){

@@ -12,8 +12,8 @@ export class RegistrationPage implements OnInit {
     public router: Router
   ) { }
   ngOnInit(){}
-  signUp(email: any, password: any){
-      this.authService.RegisterUser(email.value, password.value)      
+  signUp(email: any, password: any, displayName: any){
+      this.authService.registerUser(email.value, password.value, displayName.value)      
       .then((res) => {
         this.router.navigate(['login']); 
         // Do something here

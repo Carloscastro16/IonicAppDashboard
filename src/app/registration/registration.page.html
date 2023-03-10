@@ -4,12 +4,8 @@
       <ion-back-button></ion-back-button>
     </ion-buttons>
     <ion-item lines="full">
-      <ion-label position="floating" class="mb-2">First name</ion-label>
-      <ion-input type="text" required></ion-input>
-    </ion-item>
-    <ion-item lines="full">
-      <ion-label position="floating" class="mb-2">Last name</ion-label>
-      <ion-input type="text" required></ion-input>
+      <ion-label position="floating" class="mb-2">Name</ion-label>
+      <ion-input type="text" #displayName required></ion-input>
     </ion-item>
     <ion-item lines="full">
       <ion-label position="floating" class="mb-2">Email</ion-label>
@@ -21,7 +17,7 @@
     </ion-item>
     <ion-row>
       <ion-col>
-        <ion-button type="submit" (click)="signUp(email, password)" color="danger" expand="block">Sign Up</ion-button>
+        <ion-button type="submit" (click)="signUp(email, password, displayName)" color="danger" expand="block">Sign Up</ion-button>
       </ion-col>
     </ion-row>
   </form>
