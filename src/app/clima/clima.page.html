@@ -1,51 +1,9 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>clima</ion-title>
+  </ion-toolbar>
+</ion-header>
+
 <ion-content>
-  <div class="contenedorGeneral">
-    <div class="circulos">
-      <span class="circle1"></span>
-      <span class="circle2"></span>
-      <span class="circle3"></span>
-      <span class="circle4"></span>
-      <span class="circle5"></span>
-      <span class="circle6"></span>
-      <span class="circle7"></span>
-    </div>
-
-    <div class="clima">
-      <!-- Aqui vas a poner una imagen tipo una nube -->
-      <div class="flex items-center content-center foto">
-        foto
-      </div>
-      <ion-card *ngIf="tiempo"> 
-        <ion-card-header>
-          <img id="img_tiempo" src="{{imagen_resumen}}"   style="height: 75px;float: right"  /> 
-                  
-          <ion-card-title>{{tiempo.name}} [{{tiempo.sys.country}}]</ion-card-title>
-          <ion-card-subtitle>{{ahora | date:'dd MM yyyy HH:mm:ss'}}</ion-card-subtitle>
-        </ion-card-header>
-      
-        <ion-card-content>
-          <ion-item>
-            <ion-label id="label_tiempo">{{tiempo.main.temp}} &#8451;</ion-label>
-            <ion-note slot="end" id="temp_min"><strong>Min:</strong> {{tiempo.main.temp_min}} &#8451;</ion-note>
-            <ion-note slot="end"><strong>Max:</strong> {{tiempo.main.temp_max}} &#8451;</ion-note>
-          </ion-item>
-          <ion-item>
-            <ion-label *ngFor="let nub of tiempo.weather">
-              {{nub.description}}
-            </ion-label>
-            <ion-note slot="end"><strong>nubosidad:</strong> {{tiempo.clouds.all}} %</ion-note>
-          </ion-item>
-          <ion-item>
-            <ion-label>Viento</ion-label>
-            <ion-note slot="end">{{tiempo.wind.speed}} m/s - {{tiempo.wind.deg}}º</ion-note>
-          </ion-item>
-          <ion-item>
-            <ion-label>Humedad</ion-label>   
-            <ion-note slot="end"> {{tiempo.main.humidity}} %</ion-note>
-          </ion-item>
-        </ion-card-content>
-      </ion-card>
-    </div>
-
-  </div>
+  <app-navbar></app-navbar>
 </ion-content>
