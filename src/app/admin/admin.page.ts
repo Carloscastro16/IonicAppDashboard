@@ -43,9 +43,6 @@ export class AdminPage implements OnInit {
   
   async ngOnInit() {
     console.log(this.iguanas);
-    this.uid = this.getUid();
-    this.user = await this.firebaseService.getUserDisplayName(this.uid);
-    
     /* const path = "App/Sensores/";
     this.firebaseService.getDoc<Sensores>(path).subscribe(res => {
       console.log("humedad: " + res?.hum);
@@ -62,24 +59,24 @@ export class AdminPage implements OnInit {
       }
     }) */
   }
-  async getUid(){
+  /* async getUid(){
     const uid = await this.authService.getUID();
     return uid
-    /* if(uid){
-      this.uid = uid;
-      console.log(uid);
-    }else{
-      console.log("no existe el uid");
-    } */
-    /* this.obtenerDatos(); */
-  }
-  obtenerDatos(id: any){
+  } */
+  /* if(uid){
+    this.uid = uid;
+    console.log(uid);
+  }else{
+    console.log("no existe el uid");
+  } */
+  /* this.obtenerDatos(); */
+  /* obtenerDatos(id: any){
     const path = 'users/';
     this.firebaseService.getDoc<User>(path, id).subscribe((res: any) =>{
       console.log(res?.displayName);
       this.name = res.displayName;
     });
-  }
+  } */
   /* guardarDatos(){
     const path = 'Sensores';
     const newled: led = {

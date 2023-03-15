@@ -1,9 +1,46 @@
-<ion-header>
-  <ion-toolbar>
-    <ion-title>clima</ion-title>
-  </ion-toolbar>
-</ion-header>
-
 <ion-content>
+  <div class="contenedorGeneral">
+    <div class="circulos">
+      <span class="circle1"></span>
+      <span class="circle2"></span>
+      <span class="circle3"></span>
+      <span class="circle4"></span>
+      <span class="circle5"></span>
+      <span class="circle6"></span>
+      <span class="circle7"></span>
+    </div>
+    <div class="presentacion">
+      <h1>Bienvenido</h1>
+      <h2 class="mt-1 mb-4">Buen día</h2>
+    </div>
+    <div class="cont">
+      <div class="imagen">
+        <img src="{{ urlImagen }}" width="300px">
+      </div>
+      <div *ngIf="weather" class="datos p-3">
+        <h1>Cancún, Mx</h1>
+        <div class="datoInd">
+          <h2>Clima: {{ descript }}</h2>
+        </div>
+        <div class="datoInd">
+          <h2>Temperatura: {{ weather.main.temp }}°</h2>
+        </div>
+        <div class="datoInd">
+          <h2>Temperatura Max: {{ weather.main.temp_max }}°</h2>
+        </div>
+        <div class="datoInd">
+          <h2>Temperatura Min: {{ weather.main.temp_min }}°</h2>
+        </div>
+        <div class="datoInd">
+          <h2>Humedad: {{ weather.main.humidity }}%</h2>
+        </div>
+        <div class="datoInd">
+          <h2>Presion: {{ weather.main.pressure }}</h2>
+        </div>
+        
+      </div>
+    </div>
+
+  </div>
   <app-navbar></app-navbar>
 </ion-content>
