@@ -11,8 +11,10 @@ export class ClimaPage implements OnInit {
   weather:any;
   descript: string = "";
   imagenId!: any;
+  iconId!: any;
   
   urlImagen: string = "";
+  urlIcon: string = "";
   constructor(private wService: WeatherService) {
     this.imagenId = {
       //Imagen cuando haya tormenta 
@@ -45,6 +47,37 @@ export class ClimaPage implements OnInit {
       Clouds: "https://cdn.pixabay.com/photo/2020/07/04/06/41/clouds-5368444_960_720.jpg?auto=compress&cs=tinysrgb&dpr=2"
       
     }
+    this.iconId = {
+      //Imagen cuando haya tormenta 
+      Thunderstorm: "thunderstorm-outline",
+      
+      //Imagen cuando haya drizzle
+      Drizzle: "partly-sunny-outline",
+      
+      //Imagen cuando hayan lluvias 
+      Rain: "rainy-outline",
+      
+      //Imagen cuando haya nieve
+      Snow: "rainy-outline",
+      
+      //Imagen cuando haya sol
+      Clear: "sunny-outline",
+      
+      //imagen para sucesos especiales
+      Mist:"cloud_outline",
+      Smoke:"cloud_outline",
+      Haze:"cloud_outline",
+      Dust:"cloud_outline",
+      Fog:"cloud_outline",
+      Sand:"cloud_outline",
+      Ash:"cloud_outline",
+      Squall:"cloud_outline",
+      Tornado:"cloud_outline",
+  
+      //Imagen cuando haya nubes
+      Clouds: "cloudy-outline"
+      
+    }
   }
 
   ngOnInit() {
@@ -54,6 +87,7 @@ export class ClimaPage implements OnInit {
           console.log(res)
           this.weather = res
           this.urlImagen = this.imagenId[this.weather.weather[0].main] 
+          this.urlIcon = this.iconId[this.weather.weather[0].main] 
           this.descript = this.weather.weather[0].description.charAt(0).toUpperCase() + this.weather.weather[0].description.slice(1)
         },
         err=> console.log(err)

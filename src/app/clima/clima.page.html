@@ -1,43 +1,58 @@
 <ion-content>
+  <img class="imagen" src="{{ urlImagen }}" width="300px">
   <div class="contenedorGeneral">
-    <div class="circulos">
-      <span class="circle1"></span>
-      <span class="circle2"></span>
-      <span class="circle3"></span>
-      <span class="circle4"></span>
-      <span class="circle5"></span>
-      <span class="circle6"></span>
-      <span class="circle7"></span>
-    </div>
     <div class="presentacion">
       <h1>Bienvenido</h1>
-      <h2 class="mt-1 mb-4">Buen día</h2>
+      <h2 class="mt-1 mb-4">Cancún, Quintana Roo</h2>
     </div>
-    <div class="cont">
-      <div class="imagen">
-        <img src="{{ urlImagen }}" width="300px">
+    <div *ngIf="weather" class="datos p-3">
+      <div class="tiempo">
+        <ion-icon name="{{urlIcon}}"></ion-icon>
+        <div class="info">
+          <div class="datoInd">
+            <h1>{{ weather.main.temp }}°</h1>
+          </div>
+          <div class="datoInd des">
+            <h1>{{ descript }}</h1>
+          </div>
+        </div>
       </div>
-      <div *ngIf="weather" class="datos p-3">
-        <h1>Cancún, Mx</h1>
-        <div class="datoInd">
-          <h2>Clima: {{ descript }}</h2>
+      <br>
+      <div class="datosTiempo columns-2 p-4">
+        <div class="a">
+          <div class="datoInd">
+            <ion-icon name="thermometer-outline"></ion-icon>
+            <div class="contInd">
+              <h2>Temp Máx</h2>
+              <p>{{ weather.main.temp_max }}°</p>
+            </div>
+          </div>
+          <br>
+          <div class="datoInd">
+            <ion-icon name="thermometer-outline"></ion-icon>
+            <div class="contInd">
+              <h2>Temp Min</h2>
+              <p>{{ weather.main.temp_min }}°</p>
+            </div>
+          </div>
         </div>
-        <div class="datoInd">
-          <h2>Temperatura: {{ weather.main.temp }}°</h2>
+        <div class="a">
+          <div class="datoInd">
+            <ion-icon name="water-outline"></ion-icon>
+            <div class="contInd">
+              <h2>Humedad</h2>
+              <p>{{ weather.main.humidity }}%</p>
+            </div>
+          </div>
+          <br>
+          <div class="datoInd">
+            <ion-icon name="cloud-upload-outline"></ion-icon>
+            <div class="contInd">
+              <h2>Presión</h2>
+              <p>{{ weather.main.pressure }}</p>
+            </div>
+          </div>
         </div>
-        <div class="datoInd">
-          <h2>Temperatura Max: {{ weather.main.temp_max }}°</h2>
-        </div>
-        <div class="datoInd">
-          <h2>Temperatura Min: {{ weather.main.temp_min }}°</h2>
-        </div>
-        <div class="datoInd">
-          <h2>Humedad: {{ weather.main.humidity }}%</h2>
-        </div>
-        <div class="datoInd">
-          <h2>Presion: {{ weather.main.pressure }}</h2>
-        </div>
-        
       </div>
     </div>
 
