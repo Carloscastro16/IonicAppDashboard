@@ -2,23 +2,23 @@
   <img class="imagen" src="{{ urlImagen }}" width="300px">
   <div class="contenedorGeneral">
     <div class="presentacion">
-      <h1>Bienvenido</h1>
-      <h2 class="mt-1 mb-4">Cancún, Quintana Roo</h2>
+      <h1 class="mt-1 mb-4">Cancún, Quintana Roo</h1>
+      <span class="semana">{{ nombreDia }}</span>
+      <span class="dia">, {{ day }} {{ nomMonth }}</span>
     </div>
-    <div *ngIf="weather" class="datos p-3">
-      <div class="tiempo">
-        <ion-icon name="{{urlIcon}}"></ion-icon>
+    <div *ngIf="weather" class="datos">
+      <div class="tiempo mt-14 mb-16">
+        <div class="datoInd des">
+          <h1>{{ descript }}</h1>
+        </div>
+        <ion-icon class="m-2" name={{urlIcon}}></ion-icon>
         <div class="info">
           <div class="datoInd">
             <h1>{{ weather.main.temp }}°</h1>
           </div>
-          <div class="datoInd des">
-            <h1>{{ descript }}</h1>
-          </div>
         </div>
       </div>
-      <br>
-      <div class="datosTiempo columns-2 p-4">
+      <div class="datosTiempo columns-2 p-4 min-w-max">
         <div class="a">
           <div class="datoInd">
             <ion-icon name="thermometer-outline"></ion-icon>

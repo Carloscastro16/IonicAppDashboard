@@ -15,14 +15,21 @@ $celeste: #51d1f6;
 ion-content{
     .imagen{
         position: absolute;
-        width: 100%;
+        width: auto;
         height: 100vh;
-        z-index: 0;
+        z-index: -1;
         opacity: .8;
         filter: blur(2px);
     }
     .contenedorGeneral{
-        
+        .presentacion{
+            h1{
+                font-size: 1.3rem !important;
+            }
+            p{
+                font-size: .9rem;
+            }
+        }
         .datos{
             position: relative;
             color: $negro;
@@ -32,15 +39,18 @@ ion-content{
             display: flex;
             align-items: center;
             justify-content: center;
-            flex-direction: row;
-            font-size: 4rem;
+            flex-direction: column;
+            font-size: 2rem;
             font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color: $textos;
             ion-icon{
-                font-size: 4rem;
+                filter: drop-shadow(4px 7px 17px 1px rgb(0 0 0 / 23%));
+            font-size: 4rem;
             }
             .des{
                 h2{
-                    font-size: 2rem;
+                    filter: drop-shadow(4px 7px 17px 1px rgb(0 0 0 / 23%));
+                    font-size: 1.1rem;
                 }
             }
         }
@@ -50,7 +60,7 @@ ion-content{
             justify-content: center;
             ion-icon{
                 padding-inline: .7rem;
-                font-size: 1.6rem;
+                font-size: 1.7rem;
                 color: $gris;
             }
             h2{
@@ -58,14 +68,16 @@ ion-content{
             }
         }
     .datosTiempo{
-        background-color: $secundarioD;    
+        filter: drop-shadow(4px 7px 17px 1px rgb(0 0 0 / 23%));
+        background-color: $secundarioD;   
+        
     }
     .a{
         display: flex;
         align-items: center;
         justify-content: center;
         flex-direction: column;
-        font-size: 1.2rem;
+        font-size: 1.1rem;
     }
     }
 }

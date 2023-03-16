@@ -15,6 +15,35 @@ export class ClimaPage implements OnInit {
   
   urlImagen: string = "";
   urlIcon: string = "";
+  date = new Date;
+  day = this.date.getDate();
+  month = this.date.getMonth()+1;
+  dia = this.date.getDay();
+  dias = [
+  'Domingo',
+  'Lunes',
+  'Martes',
+  'Miércoles',
+  'Jueves',
+  'Viernes',
+  'Sábado',
+  ];
+  monthD = [
+    "Enero",
+    "Febrero",
+    "Marzo",
+    "Abril",
+    "Mayo",
+    "Junio",
+    "Julio",
+    "Agosto",
+    "Septiembre",
+    "Octubre",
+    "Noviembre",
+    "Diciembre"
+  ];
+  nombreDia = this.dias[this.dia];
+  nomMonth = this.monthD[this.month];
   constructor(private wService: WeatherService) {
     this.imagenId = {
       //Imagen cuando haya tormenta 
