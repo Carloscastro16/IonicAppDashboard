@@ -11,7 +11,7 @@
   <div class="contenedorGeneral">
     <div class="presentacion">
       <h1>Bienvenido</h1>
-      <h2 class="mt-1 mb-4">Buen día</h2>
+      <h2 class="mt-1 mb-4">Buenos días, Carlos!</h2>
       <ion-button type="submit" (click)="authService.SignOut()" expand="block">Logout</ion-button>
     </div>
     <app-datos-zona></app-datos-zona>
@@ -24,7 +24,7 @@
       <input type="radio" name="slider" id="item-3">
       <div class="cards">
         <label class="card" for="item-1" id="song-1">
-          <img src="https://images.unsplash.com/photo-1530651788726-1dbf58eeef1f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=882&q=80" alt="song">
+          <img [src]="profileUrl | async" alt="song">
         </label>
         <label class="card" for="item-2" id="song-2">
           <img src="https://images.unsplash.com/photo-1559386484-97dfc0e15539?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1234&q=80" alt="song">
@@ -38,14 +38,9 @@
       <div class="titulo mb-3 mt-2">
         <h2>Camaras</h2>
       </div>
-      <div class="camaras columns-2">
-        <div class="video">
-          <iframe width="560" height="315" src="http://127.0.0.1:5000" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-        </div>
-        <div class="video">
-          <video width="640" height="480" controls>
-            <source src="http://192.168.3.88:81/stream" type="multipart/x-mixed-replace">
-          </video>
+      <div class="camaras columns-3" >
+        <div class="video" *ngFor="let url of urls">
+          <img [src]="url" alt="song">
         </div>
       </div>
     </div>

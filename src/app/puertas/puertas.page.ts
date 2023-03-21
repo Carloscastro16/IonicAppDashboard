@@ -12,14 +12,15 @@ import { AngularFirestore, AngularFirestoreCollection } from '@angular/fire/comp
   styleUrls: ['./puertas.page.scss', '../app.component.scss'],
 })
 export class PuertasPage implements OnInit {
+  booleanValue$!: boolean;
   items: any;
-  valorL: Observable<boolean>;
   data: any;
   actuadores: any;
   /* valorL: Subscription; */
   otherValue!: boolean;
   valorLed = false;
-  valorBuzz =  false;
+  valorBuzzS =  false;
+  valorBuzzN =  false;
   valorDoor =  true;
   valorCam =  true;
   constructor(
@@ -36,34 +37,48 @@ export class PuertasPage implements OnInit {
     // Object.keys(datos.historico) obtendria los labels del documento historico
     //Object.values(datos.historico) obtendria los valores del documento historico
     /* this.valorL = afdb.list('App/ZonaNorte/Actuadores/led1').valueChanges().subscribe(data => this.otherValue = data as unknown as boolean); */
-    this.valorL = afdb.list('App/ZonaNorte/Actuadores/led1').valueChanges() as Observable<unknown> as Observable<boolean>;
-    console.log(this.valorL)
+    this.afdb.object<boolean>('App/ZonaNorte/Actuadores/led1').valueChanges().subscribe((booleanValue) => {
+      if (booleanValue == true) {
+        this.booleanValue$ = booleanValue;
+      }else if(booleanValue == false){
+        this.booleanValue$ = booleanValue;
+      }
+    });
+    this.afdb.object<boolean>('App/ZonaSur/Actuadores/buzz').valueChanges().subscribe((valorBuzzS) => {
+      if (valorBuzzS == true) {
+        this.valorBuzzS = valorBuzzS;
+      }else if(valorBuzzS == false){
+        this.valorBuzzS = valorBuzzS;
+      }
+    });
+    this.afdb.object<boolean>('App/ZonaNorte/Actuadores/buzz').valueChanges().subscribe((valorBuzzN) => {
+      if (valorBuzzN == true) {
+        this.valorBuzzN = valorBuzzN;
+      }else if(valorBuzzN == false){
+        this.valorBuzzN = valorBuzzN;
+      }
+    });
   }
   dbLed = this.afdb.database.ref('App/ZonaNorte/Actuadores/led1');
-  dbBuzz = this.afdb.database.ref('App/ZonaNorte/Actuadores/buzz');
-  dbDoor = this.afdb.database.ref('App/ZonaNorte/Actuadores/puerta');
+  dbBuzzN = this.afdb.database.ref('App/ZonaNorte/Actuadores/buzz');
+  dbBuzzS = this.afdb.database.ref('App/ZonaSur/Actuadores/buzz');
   dbCam = this.afdb.database.ref('App/ZonaNorte/Actuadores/cam');
 
   async ngOnInit() {
-    this.dbBuzz.set(false);
-    this.dbLed.set(false);
-    this.dbDoor.set(false);
-    this.dbCam.set(false);
-    this.otherValue = await this.valorL.toPromise();
     console.log(this.otherValue)
     
   }
   luzOn(){
-    this.otherValue = !this.otherValue;
-    this.dbLed.set(this.otherValue);
+    this.booleanValue$ = !this.booleanValue$;
+    this.dbLed.set(this.booleanValue$);
   }
-  sonidoOn(){
-    this.valorBuzz = !this.valorBuzz;
-    this.dbBuzz.set(this.valorBuzz);
+  sonidoNOn(){
+    this.valorBuzzN = !this.valorBuzzN;
+    this.dbBuzzN.set(this.valorBuzzN);
   }
-  doorOn(){
-    this.valorDoor = !this.valorDoor;
-    this.dbDoor.set(this.valorDoor);
+  sonidoSOn(){
+    this.valorBuzzS = !this.valorBuzzS;
+    this.dbBuzzS.set(this.valorBuzzS);
   }
   camOn(){
     this.valorCam = !this.valorCam;

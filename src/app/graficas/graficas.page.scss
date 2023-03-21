@@ -1,0 +1,26 @@
+$verde: #AAC86B;
+$verdeOscuro: #48692C;
+$gris: #494949;
+$blanco: #F8F8FF;
+$negro: #000000;
+$rosa: #F28482;
+$rosita: #FF8484;
+$textos: #0e310d;
+$secundario: rgba(150,201,61,.6);
+$secundarioD: rgba(150,201,61,.3);
+$primario: rgb(0, 152, 134);
+$primarioD: rgb(0, 152, 134, .6);
+$cafe: #704e2e;
+$celeste: #51d1f6;
+
+ion-content{
+    .contenedorGeneral{
+        .charts{
+            ion-card{
+                ion-card-header{
+                    --color: #0e310d;
+                }
+            }
+        }
+    }
+}

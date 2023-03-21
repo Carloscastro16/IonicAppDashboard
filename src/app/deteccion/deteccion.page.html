@@ -15,15 +15,15 @@
       <ion-button type="submit" (click)="authService.SignOut()" expand="block">Logout</ion-button>
     </div>
     <app-datos-zona></app-datos-zona>
-    <div class="deteccion p-4 flex flex-col md:flex-row justify-evenly">
-      <div class="zonaSur w-full">
+    <div class="deteccion p-4 flex md:flex-row justify-evenly columns-2">
+      <div class="zonaSur">
         <h2 class="pb-3">Registros Sur</h2>
-        <div class="regist flex w-full mb-2" *ngFor="let reg of registrosS | async as data">
+        <div class="regist flex w-full mb-2" *ngFor="let reg of registrosN | async as data; let i as index">
           <ion-icon name="bug-outline" class="w-4/12"></ion-icon>
           <h3 class="w-full">{{ reg }}</h3>
         </div>
       </div>
-      <div class="zonaNorte w-full">
+      <div class="zonaNorte">
         <h2 class="pb-3">Registros Norte</h2>
         <div class="regist flex w-full mb-2" *ngFor="let reg of registrosN | async as data">
           <ion-icon name="bug-outline" class="w-4/12"></ion-icon>
