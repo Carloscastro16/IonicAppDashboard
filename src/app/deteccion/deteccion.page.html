@@ -18,7 +18,7 @@
     <div class="deteccion p-4 flex md:flex-row justify-evenly columns-2">
       <div class="zonaSur">
         <h2 class="pb-3">Registros Sur</h2>
-        <div class="regist flex w-full mb-2" *ngFor="let reg of registrosN | async as data; let i as index">
+        <div class="regist flex w-full mb-2" *ngFor="let reg of registrosS | async as data; let i as index">
           <ion-icon name="bug-outline" class="w-4/12"></ion-icon>
           <h3 class="w-full">{{ reg }}</h3>
         </div>
