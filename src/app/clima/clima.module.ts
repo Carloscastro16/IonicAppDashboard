@@ -8,6 +8,8 @@ import { ClimaPageRoutingModule } from './clima-routing.module';
 
 import { ClimaPage } from './clima.page';
 import { ComponentsModule } from '../components/components.module';
+import { HttpClientModule } from '@angular/common/http';
+import { WeatherService } from '../services/weather.service';
 
 @NgModule({
   imports: [
@@ -15,8 +17,11 @@ import { ComponentsModule } from '../components/components.module';
     CommonModule,
     FormsModule,
     IonicModule,
-    ClimaPageRoutingModule
+    ClimaPageRoutingModule,
+    HttpClientModule
   ],
-  declarations: [ClimaPage]
+  declarations: [ClimaPage],
+  exports: [ClimaPage],
+  providers: [WeatherService]
 })
 export class ClimaPageModule {}

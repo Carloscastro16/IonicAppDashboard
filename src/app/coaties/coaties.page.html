@@ -1,0 +1,43 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>coaties</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="contenedorGeneral">
+    <div class="circulos">
+      <span class="circle1"></span>
+      <span class="circle2"></span>
+      <span class="circle3"></span>
+      <span class="circle4"></span>
+      <span class="circle5"></span>
+      <span class="circle6"></span>
+      <span class="circle7"></span>
+    </div>
+    <div class="presentacion">
+      <h1>Bienvenido</h1>
+      <h2 class="mt-1 mb-4">Buenos días, Carlos!</h2>
+      <ion-button type="submit" (click)="authService.SignOut()" expand="block">Logout</ion-button>
+    </div>
+    <div class="imagen-coatie">
+      <div class="coatie">
+        <h2>Coaties</h2>
+      </div>
+      <div class="cards">
+        <label class="card" for="item-1" id="song-1">
+          <img src="https://acortar.link/F4Dl8E" alt="song">
+        </label>
+        <label class="card" for="item-2" id="song-2">
+          <img src="https://acortar.link/F4Dl8E" alt="song">
+        </label>
+        <label class="card" for="item-3" id="song-3">
+          <img src="https://acortar.link/F4Dl8E" alt="song">
+        </label>
+      </div>
+      <div class="descripcion">
+        <p>Es un mamífero carnívoro nativo de México, pertenece a la familia Procyonidae.  En México actualmente se encuentra en la categoría de Especie Amenazada por SEMARNAT NOM-059-ECOL-2010.</p>
+      </div>
+    </div>
+  </div>
+</ion-content>

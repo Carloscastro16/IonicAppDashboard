@@ -13,17 +13,19 @@ import { Chart } from 'chart.js';
 })
 export class DeteccionPage implements OnInit {
   items: Observable<any[]>;
-  registrosN: Observable<any[]>;
-  registrosS: Observable<any[]>;
+  registrosN: any;
+  regNort: any;
+  registrosS: any;
+  regSouth: any;
   constructor(
     public authService: AuthenticationService,
     public firebaseSerevice: FirebaseDataService,
     public afdb: AngularFireDatabase,
     private afs: AngularFirestore
   ) { 
-    this.items = afdb.list('App/Sensores/Generales').valueChanges();
-    this.registrosN = afdb.list('App/ZonaNorte/Registros/Avisos').valueChanges();
-    this.registrosS = afdb.list('App/ZonaSur/Registros/Avisos').valueChanges();
+    this.items = afdb.list('App/Sensores/Generales').valueChanges()
+    this.registrosN = afdb.list('App/ZonaNorte/Registros/Avisos/Registro 2').valueChanges()
+    this.registrosS = afdb.list('App/ZonaSur/Registros/Avisos').valueChanges()
   }
 
   ngOnInit() {

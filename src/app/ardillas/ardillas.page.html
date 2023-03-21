@@ -1,0 +1,43 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>ardillas</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="contenedorGeneral">
+    <div class="circulos">
+      <span class="circle1"></span>
+      <span class="circle2"></span>
+      <span class="circle3"></span>
+      <span class="circle4"></span>
+      <span class="circle5"></span>
+      <span class="circle6"></span>
+      <span class="circle7"></span>
+    </div>
+    <div class="presentacion">
+      <h1>Bienvenido</h1>
+      <h2 class="mt-1 mb-4">Buenos días, Carlos!</h2>
+      <ion-button type="submit" (click)="authService.SignOut()" expand="block">Logout</ion-button>
+    </div>
+    <div class="imagen-ardilla">
+      <div class="ardillas">
+        <h2>Ardillas</h2>
+      </div>
+      <div class="cards">
+        <label class="card" for="item-1" id="song-1">
+          <img src="https://acortar.link/Kdmzuy" alt="song">
+        </label>
+        <label class="card" for="item-2" id="song-2">
+          <img src="https://acortar.link/Kdmzuy" alt="song">
+        </label>
+        <label class="card" for="item-3" id="song-3">
+          <img src="https://acortar.link/Kdmzuy" alt="song">
+        </label>
+      </div>
+      <div class="descripcion">
+        <p>Las ardillas en general forman una familia que se llama Sciuridae. Una de las características que más gusta de las ardillas es su cola, esta es esponjosa y con muchos pelos, pudiendo llegar a medir según el tipo y la especie de la que hablemos, más de 25 centímetros de largo.</p>
+      </div>
+    </div>
+  </div>
+</ion-content>

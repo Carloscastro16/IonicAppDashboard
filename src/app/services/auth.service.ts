@@ -43,9 +43,29 @@ export class AuthenticationService {
   SignIn(email: any, password: any) {
     return this.ngFireAuth.signInWithEmailAndPassword(email, password);
   }
-  // Register user with email/password
+  /* // Register user with email/password
   RegisterUser(email: any, password: any) {
     return this.ngFireAuth.createUserWithEmailAndPassword(email, password);
+  } */
+  async registerUser(email: string, password: string, displayName: string): Promise<any> {
+    try {
+      const credential = await this.ngFireAuth.createUserWithEmailAndPassword(email, password);
+      const user = credential.user;
+      const uid = user?.uid;
+  
+      // Guarda los datos del usuario en Firestore
+      const userData = {
+        uid: uid,
+        email: email,
+        displayName: displayName,
+        photoURL: "photoURL"
+      };
+      await this.afStore.collection('users').doc(uid).set(userData);
+  
+      return user;
+    } catch (error) {
+      throw error;
+    }
   }
   // Email verification when new user register
   SendVerificationMail() {
@@ -123,11 +143,16 @@ export class AuthenticationService {
     });
   }
   async getUID(){
-    const user = await this.ngFireAuth.currentUser;
-    if(user){
-      return user.uid;
-    }else{
-      return null;
-    }
+    this.ngFireAuth.authState.subscribe(user => {
+      if (user) {
+        // El usuario está autenticado
+        console.log(user.uid);
+        return user.uid as string; // Imprime el UID del usuario
+      } else {
+        return null;
+        // El usuario no está autenticado
+      }
+    });
+    
   }
 }

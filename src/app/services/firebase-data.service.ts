@@ -3,6 +3,7 @@ import { AngularFirestore, AngularFirestoreDocument, AngularFirestoreCollection 
 import { AngularFireDatabase } from '@angular/fire/compat/database';
 import { getDatabase } from "firebase/database";
 import { AngularFireAuth } from '@angular/fire/compat/auth';
+import { User } from './user'
 @Injectable({
   providedIn: 'root'
 })
@@ -27,7 +28,7 @@ export class FirebaseDataService {
     return this.afdb.object(path).valueChanges();
   }
   getDoc<tipo>(path: string, uid:string){
-    return this.FireStore.collection(path).doc<tipo>(uid).valueChanges;
+    return this.FireStore.collection(path).doc<tipo>(uid).valueChanges();
     /* const doc: AngularFirestoreDocument<tipo> = this.FireStore.doc(path + uid);
     return doc.valueChanges(); */
   }
@@ -35,5 +36,17 @@ export class FirebaseDataService {
     const collection: AngularFirestoreCollection<tipo> = this.FireStore.collection(path);
     return collection.valueChanges();
   }
-  
+  async getUserDisplayName(uid: string): Promise<string> {
+    try {
+      const userDoc = await this.FireStore.collection('users/').doc(uid).get().toPromise();
+      if (userDoc.exists) {
+        const userData = userDoc.data() as User;
+        return userData?.displayName;
+      }
+      return "null";
+    } catch (error) {
+      console.error('Error fetching user data:', error);
+      return "null";
+    }
+  }
 }

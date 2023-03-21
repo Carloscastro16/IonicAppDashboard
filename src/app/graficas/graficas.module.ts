@@ -7,9 +7,11 @@ import { IonicModule } from '@ionic/angular';
 import { GraficasPageRoutingModule } from './graficas-routing.module';
 
 import { GraficasPage } from './graficas.page';
+import { ComponentsModule } from '../components/components.module';
 
 @NgModule({
   imports: [
+    ComponentsModule,
     CommonModule,
     FormsModule,
     IonicModule,

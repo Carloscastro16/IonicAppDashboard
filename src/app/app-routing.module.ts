@@ -46,6 +46,18 @@ const routes: Routes = [
     path: 'iguanas',
     loadChildren: () => import('./iguanas/iguanas.module').then( m => m.IguanasPageModule)
   },
+  {
+    path: 'pajaros',
+    loadChildren: () => import('./pajaros/pajaros.module').then( m => m.PajarosPageModule)
+  },
+  {
+    path: 'coaties',
+    loadChildren: () => import('./coaties/coaties.module').then( m => m.CoatiesPageModule)
+  },
+  {
+    path: 'ardillas',
+    loadChildren: () => import('./ardillas/ardillas.module').then( m => m.ArdillasPageModule)
+  },
 
 
 ];

@@ -16,33 +16,26 @@
     </div>
     <app-datos-zona></app-datos-zona>
     <div class="container funciones">
-      <div class="columns-2">
+      <div class="columns-3 h-60">
         <div class="">
           <div class="funcData backdrop-blur-xs">
             <p>Luces</p>
             <ion-icon name="bulb-outline"></ion-icon>
-            <ion-toggle color="primary" (ionChange)="luzOn()"></ion-toggle>
+            <ion-toggle color="primary" [(ngModel)]="booleanValue$" [checked]="booleanValue$" (click)="luzOn()"></ion-toggle>
           </div>
         </div>
         <div class="">
           <div class="funcData backdrop-blur-xs">
-            <p>Sonido</p>
+            <p>Sonido S</p>
             <ion-icon name="megaphone-outline"></ion-icon>
-            <ion-toggle color="primary" (ionChange)="sonidoOn()"></ion-toggle>
+            <ion-toggle color="primary" [(ngModel)]="valorBuzzS" (click)="sonidoSOn()" [checked]="valorBuzzS"></ion-toggle>
           </div>
         </div>
         <div class="">
           <div class="funcData backdrop-blur-xs">
-            <p>Puerta</p>
+            <p>Sonido N</p>
             <ion-icon name="walk-outline"></ion-icon>
-            <ion-toggle color="primary" (ionChange)="doorOn()"></ion-toggle>
-          </div>
-        </div>
-        <div class="">
-          <div class="funcData backdrop-blur-xs">
-            <p>Camaras</p>
-            <ion-icon name="videocam-outline"></ion-icon>
-            <ion-toggle color="primary" (ionChange)="camOn()"></ion-toggle>
+            <ion-toggle color="primary" [(ngModel)]="valorBuzzN" (click)="sonidoNOn()" [checked]="valorBuzzN"></ion-toggle>
           </div>
         </div>
       </div>

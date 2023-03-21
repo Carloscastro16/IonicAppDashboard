@@ -15,29 +15,18 @@
       <ion-button type="submit" (click)="authService.SignOut()" expand="block">Logout</ion-button>
     </div>
     <div class="opciones">
-      <div class="opcion p-4 mb-3">
-        <div class="datos">
-          <ion-icon name="person-outline"></ion-icon>Detalles de perfil
+      <div class="flex justify-between opcion p-4 mb-6">
+        <div class="flex flex-row datos items-center">
+          <ion-icon name="wifi-outline" class="mx-3"></ion-icon>WiFi 
         </div>
-        <div class="flecha"></div>
       </div>
-      <div class="opcion p-4 mb-6">
-        <div class="datos">
-          <ion-icon name="wifi-outline"></ion-icon>WiFi 
+      <div class="flex justify-between opcion p-4 mb-3">
+        <div class="flex flex-row datos items-center">
+          <ion-icon name="help-buoy-outline" class="mx-3"></ion-icon> Soporte
         </div>
-        <div class="flecha"></div>
-      </div>
-      <div class="opcion p-4 mb-3">
-        <div class="datos">
-          <ion-icon name="notifications-outline"></ion-icon>Notificaciones
+        <div class="flecha">
+          <ion-icon name="chevron-forward-outline"></ion-icon>
         </div>
-        <div class="flecha"></div>
-      </div>
-      <div class="opcion p-4 mb-3">
-        <div class="datos">
-          <ion-icon name="help-buoy-outline"></ion-icon> Soporte
-        </div>
-        <div class="flecha"></div>
       </div>
     </div>
   </div>
