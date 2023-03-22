@@ -18,7 +18,9 @@ $cafe: #704e2e;
 @mixin aros{
     position: absolute;
     border-radius: 50%;
-    border: $verdeClaro solid 4px;
+    border: $azulin solid 4px;
+    filter: blur(3px);
+    opacity: .2;
 }
 ion-content{
     overflow-x: none;

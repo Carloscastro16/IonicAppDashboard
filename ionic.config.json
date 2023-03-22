@@ -1,7 +1,8 @@
 {
   "name": "Equipo1",
   "integrations": {
-    "cordova": {}
+    "cordova": {},
+    "capacitor": {}
   },
   "type": "angular"
 }
