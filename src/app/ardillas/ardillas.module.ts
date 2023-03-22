@@ -7,9 +7,11 @@ import { IonicModule } from '@ionic/angular';
 import { ArdillasPageRoutingModule } from './ardillas-routing.module';
 
 import { ArdillasPage } from './ardillas.page';
+import { ComponentsModule } from '../components/components.module';
 
 @NgModule({
   imports: [
+    ComponentsModule,
     CommonModule,
     FormsModule,
     IonicModule,

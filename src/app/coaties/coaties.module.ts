@@ -7,9 +7,11 @@ import { IonicModule } from '@ionic/angular';
 import { CoatiesPageRoutingModule } from './coaties-routing.module';
 
 import { CoatiesPage } from './coaties.page';
+import { ComponentsModule } from '../components/components.module';
 
 @NgModule({
   imports: [
+    ComponentsModule,
     CommonModule,
     FormsModule,
     IonicModule,
